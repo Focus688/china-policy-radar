@@ -23,12 +23,27 @@ A machine-readable, source-cited index of Chinese policy documents — built for
 
 ```
 data/<年>/<发布日期>-<slug>.md     一条政策 = 一个文件
-schema/policy.schema.json          数据格式定义
-scripts/fetch_gov.py               从政府网抓取原文
-scripts/structure.py               原文 → 结构化条目
-llms.txt                           给 AI agent 的索引（GEO）
-ROADMAP.md                         长线路线图
+catalog/                          自动生成的历年政策清单
+diffs/<政策族>.md                  同一主题文件的措辞演进追踪
+scoreboard/<政策>.md               政策发布后的回测记分牌
+schema/policy.schema.json         数据格式定义
+scripts/fetch_gov.py              抓取单篇政策原文
+scripts/watch_gov.py              政策巡检（发现新文件）
+scripts/build_catalog.py          生成政策清单
+scripts/build_index.py            生成机器可读索引
+state/seen.json                   巡检状态（已知文件）
+DATA-SOURCES.md                   六环证据链数据源矩阵
+ROADMAP.md                        长线路线图
+index.json                        机器可读索引（给 AI agent）
+llms.txt                          站点说明（GEO）
 ```
+
+## 现在可以看到什么
+
+- **[政策清单](catalog/2024-now-central-policies.md)**：2024 年至今中央及部委政策 68 条，全部带原文链接
+- **[「人工智能+」政策族](diffs/AI-plus-timeline.md)**：用词演进（开展→深入实施→全面实施）+ **13 份部委逐行业专项文件**
+- **[回测记分牌](scoreboard/2026-10-09-xin-zhi-shengchanli.md)**：新质生产力意见的 T0 基线数据与观察节点
+
 
 ## 数据规范（摘要）
 
