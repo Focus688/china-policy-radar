@@ -1,0 +1,71 @@
+# 授权说明 · License
+
+本项目采用**分层授权**，因为不同部分的著作权状态不同。
+
+---
+
+## 1. 政策文件原文
+
+**公有领域（Public Domain）**
+
+依《中华人民共和国著作权法》第五条，法律、法规，国家机关的决议、决定、命令和其他具有立法、行政、司法性质的文件，及其官方正式译文**不适用著作权法**。
+
+因此本仓库收录的政策文件正文可自由转载、使用，无需授权。
+
+## 2. 本项目的整理成果
+
+**CC BY 4.0**
+
+以下内容由本项目作者创作，采用 [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/deed.zh) 授权：
+
+- 结构化编排与字段设计
+- 注释、分析、判断（如 `diffs/`、`scoreboard/`、`DATA-SOURCES.md`）
+- 数据源矩阵与证据链设计
+- 文档撰写
+
+**转载要求**：注明来源为本仓库并附链接即可。
+
+## 3. 代码
+
+**MIT License**
+
+`scripts/` 目录下的全部脚本采用 MIT 授权：
+
+```
+Copyright (c) 2026 china-policy-radar contributors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## 4. 明确排除
+
+以下内容**不在**本项目授权范围内：
+
+- 引用的第三方新闻报道正文
+- 官方配图、图解、H5、视频
+- 任何政府机关的名称、徽标、标识（国徽、网站标识码等）
+
+其权利归各自权利人所有。
+
+---
+
+## 5. 免责
+
+见 [`DISCLAIMER.md`](DISCLAIMER.md)。
+使用本项目内容进行任何决策前，请核对官方原文。

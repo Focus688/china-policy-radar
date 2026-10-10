@@ -11,13 +11,22 @@
   - 已知文件 URL 持久化到 state/seen.json，避免重复上报
   - 首次运行时把当前全部结果作为基线写入，不上报（避免噪音）
   - 输出 JSON，便于 GitHub Action 生成 Issue
+
+⚠️ 采集合规声明（详见仓库 COMPLIANCE.md）:
+  - sousuo.www.gov.cn 的 robots.txt 声明 Disallow: /，本脚本使用该接口属已知合规瑕疵
+  - 缓解措施：每日仅运行一次；单次请求间隔 >= 1 秒；UA 标明项目身份便于站点识别
+  - 如站点管理方提出异议，立即停止使用该接口
+  - 若接入方自行使用本脚本，请自行评估并承担合规责任
 """
 import argparse
 import json
+import time
 import urllib.parse
 import urllib.request
 from datetime import date
 from pathlib import Path
+
+REQUEST_INTERVAL = 1.2  # 秒；对政府网站保持克制
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "state" / "seen.json"
@@ -53,7 +62,9 @@ def strip_tags(s: str) -> str:
 
 def collect():
     found = {}
-    for kw in KEYWORDS:
+    for idx, kw in enumerate(KEYWORDS):
+        if idx:
+            time.sleep(REQUEST_INTERVAL)  # 限速：遵守采集合规纪律
         try:
             d = query(kw)
         except Exception as e:  # 网络问题不中断整体巡检

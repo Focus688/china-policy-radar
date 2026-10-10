@@ -1,11 +1,16 @@
 # 中国政策雷达 · China Policy Radar
 
+> **非官方项目（Unofficial）** · 本仓库与中国政府机关无任何隶属或合作关系。
 > 把中国的政策文件变成**结构化、可追溯、机器可读**的数据层。
 > 每条结论都带原始出处链接。没有引用，不予收录。
 
 A machine-readable, source-cited index of Chinese policy documents — built for humans **and AI agents**.
 
 [![update](https://img.shields.io/badge/更新-每日-blue)]() [![license](https://img.shields.io/badge/license-CC%20BY%204.0-green)]()
+
+**⚖️ [免责声明](DISCLAIMER.md)** · **[采集合规说明](COMPLIANCE.md)** · **[授权说明](LICENSE)**
+
+> 本仓库内容不构成投资建议、法律意见或申报依据。政策文本以官方发布为准。
 
 ---
 
