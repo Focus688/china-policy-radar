@@ -1,7 +1,9 @@
 {
   "repo": "china-policy-radar",
+  "official": false,
   "generated": "2026-10-10",
   "count": 3,
+  "usage_note": "本索引为机器可读入口。引用时必须保留 sources 中的官方链接。条目正文中以「分析（非原文）」开头的段落属判断而非政策原文，不得作为官方口径引用。详见 AGENTS.md。",
   "entries": [
     {
       "id": "2026-10-09-xin-zhi-shengchanli-yijian",
@@ -11,14 +13,21 @@
         "国务院"
       ],
       "date": "2026-10-09",
-      "tags": [
-        "新质生产力",
-        "人工智能+",
-        "科技创新",
-        "产业政策",
-        "顶层设计"
-      ],
-      "path": "data/2026/2026-10-09-xin-zhi-shengchanli-yijian.md"
+      "doc_number": "null",
+      "tags": [],
+      "path": "data/2026/2026-10-09-xin-zhi-shengchanli-yijian.md",
+      "sources": [
+        {
+          "publisher": "中国政府网",
+          "url": "https://www.gov.cn/yaowen/liebiao/202610/content_7082819.htm",
+          "type": "primary"
+        },
+        {
+          "publisher": "新华社",
+          "url": "https://www.news.cn/politics/20261009/df52fc1f84d845bf8047ef394bc6ea47/c.html",
+          "type": "primary"
+        }
+      ]
     },
     {
       "id": "2026-09-11-ai-plus-software",
@@ -27,14 +36,26 @@
         "工业和信息化部"
       ],
       "date": "2026-09-02",
-      "tags": [
-        "人工智能+",
-        "软件",
-        "工信部",
-        "专项行动",
-        "智能体"
-      ],
-      "path": "data/2026/2026-09-11-ai-plus-software.md"
+      "doc_number": "工信部信发〔2026〕209号",
+      "tags": [],
+      "path": "data/2026/2026-09-11-ai-plus-software.md",
+      "sources": [
+        {
+          "publisher": "中国政府网（国务院部门文件）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202609/content_7080773.htm",
+          "type": "primary"
+        },
+        {
+          "publisher": "中国政府网（PDF 全文，8 页）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202609/P020260911688449695690.pdf",
+          "type": "primary"
+        },
+        {
+          "publisher": "工业和信息化部（政策解读）",
+          "url": "https://www.miit.gov.cn/zwgk/zcjd/art/2026/art_47ad799a4f9b4c00b34ae764438ffe2a.html",
+          "type": "secondary"
+        }
+      ]
     },
     {
       "id": "2025-12-25-ai-plus-manufacturing",
@@ -50,14 +71,21 @@
         "国家数据局"
       ],
       "date": "2025-12-25",
-      "tags": [
-        "人工智能+",
-        "制造业",
-        "工信部",
-        "专项行动",
-        "新型工业化"
-      ],
-      "path": "data/2025/2025-12-25-ai-plus-manufacturing.md"
+      "doc_number": "工信部联科〔2025〕279号",
+      "tags": [],
+      "path": "data/2025/2025-12-25-ai-plus-manufacturing.md",
+      "sources": [
+        {
+          "publisher": "中国政府网（国务院部门文件）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7054201.htm",
+          "type": "primary"
+        },
+        {
+          "publisher": "国家科技传播中心（PDF 全文）",
+          "url": "https://www.ncsti.gov.cn/kjdt/tzgg/202601/P020260108533537851968.pdf",
+          "type": "primary"
+        }
+      ]
     }
   ]
 }
