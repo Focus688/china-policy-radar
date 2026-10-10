@@ -23,6 +23,7 @@
 | **[OPC-policies.md](OPC-policies.md)** | 政策清单：国家级 1 份 + 省级 2 份 + 市级/区级 13 份，含文号与官方链接 |
 | **[OPC-subsidy-comparison.md](OPC-subsidy-comparison.md)** | **补贴口径对照**：哪些是真给钱（A/B/C/D 分级）+ 判断"实不实"的七个问题 |
 | **[OPC-cases.md](OPC-cases.md)** | **案例清单**：16 个企业案例 + 25 个 OPC 社区/园区 + 可查证数据点 |
+| **[OPC-dongguan.md](OPC-dongguan.md)** | **东莞专场**：市级第八条 + 滨海湾新区 10 条（含金额，原文已核）|
 | **[OPC-overseas.md](OPC-overseas.md)** | 海外对照：美国 LLC / 爱沙尼亚 OÜ / 英国 Ltd / 新加坡 / 香港 / UAE / 日本 |
 
 ## 三、核心事实速览
