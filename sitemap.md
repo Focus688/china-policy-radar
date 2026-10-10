@@ -75,6 +75,7 @@
 | `scripts/build_stubs.py` | catalog → data stub 生成 |
 | `scripts/build_index.py` | 生成 index.json |
 | `scripts/check_links.py` | 外部链接失效巡检 |
+| `scripts/check_scoreboard.py` | 记分牌观察节点到期检查 |
 | `state/seen.json` | 巡检状态 |
 
 ---
