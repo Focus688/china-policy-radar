@@ -20,6 +20,7 @@
 """
 import argparse
 import json
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -102,7 +103,7 @@ def main():
 
     if not isinstance(state, dict):
         save(found)
-        print(f"[baseline] 首次运行，建立基线 {len(found)} 条，未上报。")
+        print(f"[baseline] 首次运行，建立基线 {len(found)} 条，未上报。", file=sys.stderr)
         return
 
     seen = state
@@ -119,7 +120,7 @@ def main():
     if args.mark_seen:
         seen.update(found)
         save(seen)
-        print(f"[state] 已写入，累计 {len(seen)} 条。")
+        print(f"[state] 已写入，累计 {len(seen)} 条。", file=sys.stderr)
 
 
 if __name__ == "__main__":
