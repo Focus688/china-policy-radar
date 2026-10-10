@@ -46,6 +46,7 @@ llms.txt                          站点说明（GEO）
 
 ## 现在可以看到什么
 
+- **[🧭 赛道进入评估框架](frameworks/sector-entry-evaluation.md)**：退出残值判据——判断任何方向值不值得下注（含餐饮 vs OPC 对比）
 - **[🎯 可申报通道清单](CHANNELS.md)**：从两份专项行动文件提取的资金与项目通道（含 600.6 亿国家 AI 产业投资基金）
 - **[📌 专题：OPC 一人公司](topics/OPC-one-person-company.md)**：国家/省/市政策 16 份 + [案例清单](topics/OPC-cases.md) + [海外对照](topics/OPC-overseas.md)
 - **[政策清单](catalog/2024-now-central-policies.md)**：2024 年至今中央及部委政策 68 条，全部带原文链接
