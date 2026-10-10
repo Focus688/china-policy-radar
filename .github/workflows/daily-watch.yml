@@ -1,0 +1,65 @@
+name: 政策巡检
+
+on:
+  schedule:
+    # 每天 UTC 01:00 = 北京时间 09:00
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 巡检新政策
+        id: watch
+        run: |
+          if [ ! -f state/seen.json ]; then
+            python3 scripts/watch_gov.py --mark-seen > /dev/null
+            echo "首次运行，已建立基线"
+            echo "new_count=0" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+          python3 scripts/watch_gov.py --mark-seen > /tmp/result.json
+          cat /tmp/result.json
+          python3 - <<'EOF' >> $GITHUB_OUTPUT
+          import json
+          d = json.load(open('/tmp/result.json'))
+          print(f"new_count={d['new_count']}")
+          EOF
+
+      - name: 有新政策则开 Issue
+        if: steps.watch.outputs.new_count != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'EOF' > /tmp/body.md
+          import json
+          d = json.load(open('/tmp/result.json'))
+          print(f"巡检日期：{d['checked']}\n")
+          print(f"发现 **{d['new_count']}** 条新政策，请评估是否收录：\n")
+          for it in d["new"]:
+              print(f"- [{it['title']}]({it['url']})  ")
+              print(f"  `{it.get('date') or '日期未解析'}` · 发文字号 `{it.get('doc_number') or '—'}` · 命中关键词 `{it['matched_keyword']}`")
+          EOF
+          gh issue create \
+            --title "【政策巡检】$(date +%F) 发现 ${{ steps.watch.outputs.new_count }} 条新政策" \
+            --body-file /tmp/body.md \
+            --label "policy-watch" || echo "label 不存在，忽略"
+
+      - name: 提交状态文件
+        run: |
+          git config user.name "policy-radar-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add state/seen.json
+          git diff --staged --quiet || git commit -m "chore: 更新政策巡检状态 $(date +%F)"
+          git push

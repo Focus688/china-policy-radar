@@ -1,0 +1,24 @@
+{
+  "repo": "china-policy-radar",
+  "generated": "2026-10-10",
+  "count": 1,
+  "entries": [
+    {
+      "id": "2026-10-09-xin-zhi-shengchanli-yijian",
+      "title": "中共中央 国务院关于发展新质生产力的意见",
+      "issuer": [
+        "中共中央",
+        "国务院"
+      ],
+      "date": "2026-10-09",
+      "tags": [
+        "新质生产力",
+        "人工智能+",
+        "科技创新",
+        "产业政策",
+        "顶层设计"
+      ],
+      "path": "data/2026/2026-10-09-xin-zhi-shengchanli-yijian.md"
+    }
+  ]
+}
