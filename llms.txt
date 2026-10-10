@@ -33,8 +33,12 @@
 
 ## 关键条目索引
 
+- **[可申报通道清单](CHANNELS.md)** — 资金与项目通道（含 600.6 亿国家 AI 产业投资基金）
 - [政策清单（2024 至今，68 条）](catalog/2024-now-central-policies.md)
+- [人工核验清单（26 份重点文件）](catalog/central-ai-tech-2024-2026.md)
 - [「人工智能+」政策族：用词演进 + 13 份部委专项文件](diffs/AI-plus-timeline.md)
+- [「人工智能+制造」专项行动实施意见（工信部联科〔2025〕279号）](data/2025/2025-12-25-ai-plus-manufacturing.md)
+- [「人工智能+软件」专项行动实施方案（工信部信发〔2026〕209号）](data/2026/2026-09-11-ai-plus-software.md)
 - [回测记分牌：新质生产力意见](scoreboard/2026-10-09-xin-zhi-shengchanli.md)
 - [数据源矩阵（六环证据链）](DATA-SOURCES.md)
 
