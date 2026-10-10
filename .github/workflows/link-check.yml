@@ -1,0 +1,59 @@
+name: 外链巡检
+
+on:
+  schedule:
+    # 每周一 UTC 02:00 = 北京时间 10:00
+    - cron: "0 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 巡检外链
+        run: |
+          python3 scripts/check_links.py --json > /tmp/links.json || true
+          python3 - <<'EOF'
+          import json
+          d = json.load(open('/tmp/links.json'))
+          print(f"检查 {d['checked']} 条 | 死链 {len(d['dead'])} | 不可达 {len(d['blocked'])}")
+          with open('/tmp/dead_count','w') as f:
+              f.write(str(len(d['dead'])))
+          EOF
+          echo "dead=$(cat /tmp/dead_count)" >> $GITHUB_OUTPUT
+        id: check
+
+      - name: 有死链则开 Issue
+        if: steps.check.outputs.dead != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'EOF' > /tmp/body.md
+          import json
+          d = json.load(open('/tmp/links.json'))
+          print(f"**{len(d['dead'])} 条死链**需要替换来源。\n")
+          print("> 数据铁律：没有一手来源 URL 的条目，一律不收。死链等同失去来源。\n")
+          for r in d["dead"]:
+              print(f"- `{r['status']}` {r['url']}")
+              print(f"  - 出现在：{', '.join(r['in'][:4])}")
+          if d["blocked"]:
+              print(f"\n---\n### 另有 {len(d['blocked'])} 条不可达（403/429/超时，不一定是死链）\n")
+              for r in d["blocked"][:15]:
+                  print(f"- `{r['verdict']}` {r['url'][:100]}")
+          EOF
+          gh issue create \
+            --title "【外链巡检】$(date +%F) 发现 ${{ steps.check.outputs.dead }} 条死链" \
+            --body-file /tmp/body.md || \
+          gh issue create \
+            --title "【外链巡检】$(date +%F) 发现 ${{ steps.check.outputs.dead }} 条死链" \
+            --body-file /tmp/body.md
