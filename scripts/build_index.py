@@ -15,6 +15,14 @@ DATA = ROOT / "data"
 OUT = ROOT / "index.json"
 
 
+def _unquote(val: str) -> str:
+    """只剥掉成对的引号；标题里 '人工智能+制造' 这类内嵌引号必须保留。"""
+    val = val.strip()
+    if len(val) >= 2 and val[0] == val[-1] and val[0] in "\"'":
+        return val[1:-1]
+    return val
+
+
 def parse_front_matter(text: str):
     """极简 YAML 子集解析：标量、内联数组，以及 sources 块中的 publisher/url/type。"""
     m = re.match(r"^---\n(.*?)\n---\n", text, flags=re.S)
@@ -32,9 +40,9 @@ def parse_front_matter(text: str):
             m_sub = re.match(r"^\s+-\s*publisher:\s*(.*)$", line)
             m_kv = re.match(r"^\s+(\w+):\s*(.*)$", line)
             if m_sub:
-                sources.append({"publisher": m_sub.group(1).strip().strip("'\"")})
+                sources.append({"publisher": _unquote(m_sub.group(1))})
             elif m_kv and sources:
-                k, v = m_kv.group(1), m_kv.group(2).strip().strip("'\"")
+                k, v = m_kv.group(1), _unquote(m_kv.group(2))
                 sources[-1][k] = v
             continue
         m2 = re.match(r"^([A-Za-z_][\w]*):\s*(.*)$", line)
@@ -49,7 +57,7 @@ def parse_front_matter(text: str):
             elif val.startswith("[") and val.endswith("]"):
                 data[key] = [x.strip().strip("'\"") for x in val[1:-1].split(",") if x.strip()]
             else:
-                data[key] = val.strip("'\"")
+                data[key] = _unquote(val)
     return data
 
 
