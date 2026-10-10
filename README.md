@@ -36,6 +36,7 @@ scripts/fetch_gov.py              抓取单篇政策原文
 scripts/watch_gov.py              政策巡检（发现新文件）
 scripts/build_catalog.py          生成政策清单
 scripts/build_index.py            生成机器可读索引
+scripts/build_stubs.py            catalog → data stub 生成（status: pending）
 state/seen.json                   巡检状态（已知文件）
 DATA-SOURCES.md                   六环证据链数据源矩阵
 ROADMAP.md                        长线路线图
