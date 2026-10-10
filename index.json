@@ -2,7 +2,7 @@
   "repo": "china-policy-radar",
   "official": false,
   "generated": "2026-10-10",
-  "count": 3,
+  "count": 91,
   "usage_note": "本索引为机器可读入口。引用时必须保留 sources 中的官方链接。条目正文中以「分析（非原文）」开头的段落属判断而非政策原文，不得作为官方口径引用。详见 AGENTS.md。",
   "entries": [
     {
@@ -13,8 +13,14 @@
         "国务院"
       ],
       "date": "2026-10-09",
-      "doc_number": "null",
-      "tags": [],
+      "doc_number": null,
+      "tags": [
+        "新质生产力",
+        "人工智能+",
+        "科技创新",
+        "产业政策",
+        "顶层设计"
+      ],
       "path": "data/2026/2026-10-09-xin-zhi-shengchanli-yijian.md",
       "sources": [
         {
@@ -37,7 +43,13 @@
       ],
       "date": "2026-09-02",
       "doc_number": "工信部信发〔2026〕209号",
-      "tags": [],
+      "tags": [
+        "人工智能+",
+        "软件",
+        "工信部",
+        "专项行动",
+        "智能体"
+      ],
       "path": "data/2026/2026-09-11-ai-plus-software.md",
       "sources": [
         {
@@ -58,6 +70,365 @@
       ]
     },
     {
+      "id": "2026-07-08-ai-plus",
+      "title": "关于加快推进“人工智能＋人社”应用发展的实施意见",
+      "issuer": [],
+      "date": "2026-07-08",
+      "doc_number": "人社部发〔2026〕40号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2026/2026-07-08-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202607/content_7074732.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-18-ai-plus",
+      "title": "商务部等8部门关于加快“人工智能+消费”发展的实施意见",
+      "issuer": [
+        "商建发2026年第89号"
+      ],
+      "date": "2026-06-18",
+      "doc_number": null,
+      "tags": [
+        "人工智能+",
+        "消费"
+      ],
+      "path": "data/2026/2026-06-18-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202606/content_7072672.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-10-ai-plus",
+      "title": "工业和信息化部关于印发《“人工智能+信息通信”创新发展实施意见（2026—2028年）》的通知",
+      "issuer": [],
+      "date": "2026-06-10",
+      "doc_number": "工信部通信〔2026〕121号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2026/2026-06-10-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202606/content_7071755.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-02-energy",
+      "title": "国家发展改革委等部门关于印发《非化石能源电力消费核算指南（试行）》的通知",
+      "issuer": [],
+      "date": "2026-06-02",
+      "doc_number": "发改能源〔2026〕622号",
+      "tags": [
+        "能源",
+        "消费"
+      ],
+      "path": "data/2026/2026-06-02-energy.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202606/content_7070873.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-05-08-ai-plus",
+      "title": "国家发展改革委 国家能源局 工业和信息化部 国家数据局印发《关于促进人工智能与能源双向赋能的行动方案》的通知",
+      "issuer": [],
+      "date": "2026-05-08",
+      "doc_number": "国能发科技〔2026〕34号",
+      "tags": [
+        "人工智能+",
+        "数据要素",
+        "能源"
+      ],
+      "path": "data/2026/2026-05-08-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202605/content_7068153.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-10-ai-plus",
+      "title": "教育部等五部门关于印发《“人工智能+教育”行动计划》的通知",
+      "issuer": [],
+      "date": "2026-04-10",
+      "doc_number": "教科信〔2026〕1号",
+      "tags": [
+        "人工智能+",
+        "教育"
+      ],
+      "path": "data/2026/2026-04-10-ai-plus-2.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202604/content_7065138.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-10-ai-plus",
+      "title": "人工智能拟人化互动服务管理暂行办法",
+      "issuer": [
+        "国家网信办"
+      ],
+      "date": "2026-04-10",
+      "doc_number": null,
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2026/2026-04-10-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.cac.gov.cn/2026-04/10/c_1777558395078289.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-03-ai-plus",
+      "title": "工业和信息化部等十部门关于印发《人工智能科技伦理审查与服务办法（试行）》的通知",
+      "issuer": [],
+      "date": "2026-04-03",
+      "doc_number": "工信部联科〔2026〕75号",
+      "tags": [
+        "人工智能+",
+        "AI治理"
+      ],
+      "path": "data/2026/2026-04-03-ai-plus-2.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202604/content_7064646.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-04-03-ai-plus",
+      "title": "国家药监局关于“人工智能+药品监管”的实施意见",
+      "issuer": [],
+      "date": "2026-04-03",
+      "doc_number": "国药监综〔2026〕6号",
+      "tags": [
+        "人工智能+",
+        "监管"
+      ],
+      "path": "data/2026/2026-04-03-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202604/content_7064591.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-12-doc-c42f8cbe",
+      "title": "关于\\\"十五五\\\"规划纲要的决议",
+      "issuer": [
+        "全国人大"
+      ],
+      "date": "2026-03-12",
+      "doc_number": null,
+      "tags": [
+        "顶层设计"
+      ],
+      "path": "data/2026/2026-03-12-doc-c42f8cbe.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/yaowen/liebiao/202603/content_7062501.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-03-05-gov-work-report",
+      "title": "政府工作报告（2026）",
+      "issuer": [
+        "国务院"
+      ],
+      "date": "2026-03-05",
+      "doc_number": null,
+      "tags": [
+        "政府工作报告"
+      ],
+      "path": "data/2026/2026-03-05-gov-work-report.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/gongbao/2026/issue_12646/202603/content_7064134.html",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-02-18-ai-plus",
+      "title": "国家发展改革委等部门关于加快招标投标领域人工智能推广应用的实施意见",
+      "issuer": [],
+      "date": "2026-02-18",
+      "doc_number": "发改法规〔2026〕195号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2026/2026-02-18-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202602/content_7058164.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-02-09-data-elements",
+      "title": "国家数据局等部门关于培育数据流通服务机构 加快推进数据要素市场化价值化的意见",
+      "issuer": [],
+      "date": "2026-02-09",
+      "doc_number": "国数政策〔2026〕6号",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2026/2026-02-09-data-elements.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202602/content_7057405.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-02-02-low-altitude",
+      "title": "市场监管总局等部门关于印发《低空经济标准体系建设指南（2025年版）》的通知",
+      "issuer": [],
+      "date": "2026-02-02",
+      "doc_number": null,
+      "tags": [
+        "低空经济",
+        "监管"
+      ],
+      "path": "data/2026/2026-02-02-low-altitude.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202602/content_7056835.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-01-21-equipment-renewal",
+      "title": "关于优化实施设备更新贷款财政贴息政策的通知",
+      "issuer": [],
+      "date": "2026-01-21",
+      "doc_number": "财金〔2026〕2号",
+      "tags": [
+        "设备更新"
+      ],
+      "path": "data/2026/2026-01-21-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7055549.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2026-01-07-ai-plus",
+      "title": "工业和信息化部办公厅关于印发《工业互联网和人工智能融合赋能行动方案》的通知",
+      "issuer": [],
+      "date": "2026-01-07",
+      "doc_number": "工信厅信管〔2025〕76号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2026/2026-01-07-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202601/content_7054192.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-12-30-doc-cc768c4b",
+      "title": "工业和信息化部办公厅关于加快推进国家新型互联网交换中心创新发展的指导意见",
+      "issuer": [],
+      "date": "2025-12-30",
+      "doc_number": "工信厅信管〔2025〕67号",
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2025/2025-12-30-doc-cc768c4b.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7053237.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-12-30-equipment-renewal",
+      "title": "国家发展改革委 财政部关于2026年实施大规模设备更新和消费品以旧换新政策的通知",
+      "issuer": [],
+      "date": "2025-12-30",
+      "doc_number": "发改环资〔2025〕1745号",
+      "tags": [
+        "设备更新",
+        "消费"
+      ],
+      "path": "data/2025/2025-12-30-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7053236.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-12-26-low-altitude",
+      "title": "国家发展改革委关于印发《低空经济及其核心产业统计分类（试行）》的通知",
+      "issuer": [],
+      "date": "2025-12-26",
+      "doc_number": "发改低空〔2025〕1676号",
+      "tags": [
+        "低空经济"
+      ],
+      "path": "data/2025/2025-12-26-low-altitude.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7052866.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
       "id": "2025-12-25-ai-plus-manufacturing",
       "title": "\"人工智能+制造\"专项行动实施意见",
       "issuer": [
@@ -72,7 +443,13 @@
       ],
       "date": "2025-12-25",
       "doc_number": "工信部联科〔2025〕279号",
-      "tags": [],
+      "tags": [
+        "人工智能+",
+        "制造业",
+        "工信部",
+        "专项行动",
+        "新型工业化"
+      ],
       "path": "data/2025/2025-12-25-ai-plus-manufacturing.md",
       "sources": [
         {
@@ -83,6 +460,1311 @@
         {
           "publisher": "国家科技传播中心（PDF 全文）",
           "url": "https://www.ncsti.gov.cn/kjdt/tzgg/202601/P020260108533537851968.pdf",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-12-05-ai-plus",
+      "title": "中国民用航空局关于印发推动“人工智能+民航”高质量发展实施意见的通知",
+      "issuer": [],
+      "date": "2025-12-05",
+      "doc_number": "民航发〔2025〕24号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2025/2025-12-05-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7050374.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-12-03-data-elements",
+      "title": "关于加强数据要素学科专业建设和数字人才队伍建设的意见",
+      "issuer": [],
+      "date": "2025-12-03",
+      "doc_number": "发改数据〔2025〕1425号",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2025/2025-12-03-data-elements.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202512/content_7050192.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-11-06-ai-plus",
+      "title": "工业和信息化部办公厅关于开展2025年人工智能产业及赋能新型工业化创新任务揭榜挂帅工作的通知",
+      "issuer": [],
+      "date": "2025-11-06",
+      "doc_number": "工信厅科函〔2025〕427号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2025/2025-11-06-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047250.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-11-04-ai-plus",
+      "title": "关于促进和规范“人工智能+医疗卫生”应用发展的实施意见",
+      "issuer": [],
+      "date": "2025-11-04",
+      "doc_number": "国卫办规划发〔2025〕30号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2025/2025-11-04-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202511/content_7047018.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-10-28-five-year-plan",
+      "title": "中共中央关于制定国民经济和社会发展第十五个五年规划的建议",
+      "issuer": [
+        "中共中央"
+      ],
+      "date": "2025-10-28",
+      "doc_number": null,
+      "tags": [
+        "顶层设计"
+      ],
+      "path": "data/2025/2025-10-28-five-year-plan.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/202510/content_7046050.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-10-11-manufacturing",
+      "title": "工业和信息化部等七部门关于印发《深入推动服务型制造创新发展实施方案（2025—2028年）》的通知",
+      "issuer": [],
+      "date": "2025-10-11",
+      "doc_number": "工信部联政法〔2025〕202号",
+      "tags": [
+        "智能制造"
+      ],
+      "path": "data/2025/2025-10-11-manufacturing.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202510/content_7043986.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-09-12-ai-plus",
+      "title": "国家发展改革委 国家能源局关于推进“人工智能+”能源高质量发展的实施意见",
+      "issuer": [],
+      "date": "2025-09-12",
+      "doc_number": "国能发科技〔2025〕73号",
+      "tags": [
+        "人工智能+",
+        "能源"
+      ],
+      "path": "data/2025/2025-09-12-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202509/content_7040253.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-08-26-ai-plus",
+      "title": "国务院关于深入实施\\\"人工智能+\\\"行动的意见",
+      "issuer": [
+        "国务院"
+      ],
+      "date": "2025-08-26",
+      "doc_number": "国发〔2025〕11号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2025/2025-08-26-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202508/content_7037862.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-08-08-energy",
+      "title": "国家发展改革委 国家能源局关于印发《电力市场计量结算基本规则》的通知",
+      "issuer": [],
+      "date": "2025-08-08",
+      "doc_number": "发改能源规〔2025〕976号",
+      "tags": [
+        "能源"
+      ],
+      "path": "data/2025/2025-08-08-energy.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202508/content_7035710.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-07-22-doc-a1522618",
+      "title": "关于加强商业航天项目质量监督管理工作的通知",
+      "issuer": [],
+      "date": "2025-07-22",
+      "doc_number": null,
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2025/2025-07-22-doc-a1522618.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202507/content_7033049.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-07-17-new-quality-productive-forces",
+      "title": "市场监管总局 工业和信息化部关于印发《计量支撑产业新质生产力发展行动方案（2025—2030年）》的通知",
+      "issuer": [],
+      "date": "2025-07-17",
+      "doc_number": "国市监计量发〔2025〕59号",
+      "tags": [
+        "新质生产力",
+        "监管"
+      ],
+      "path": "data/2025/2025-07-17-new-quality-productive-forces.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202507/content_7032440.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-06-30-ai-plus",
+      "title": "国家知识产权局办公室关于开展“人工智能+”知识产权信息公共服务应用场景建设的通知",
+      "issuer": [],
+      "date": "2025-06-30",
+      "doc_number": "国知办函服字〔2025〕479号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2025/2025-06-30-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202506/content_7030006.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-06-12-manufacturing",
+      "title": "工业和信息化部办公厅 国家发展改革委办公厅关于开展生物制造中试能力建设平台培育工作的通知",
+      "issuer": [],
+      "date": "2025-06-12",
+      "doc_number": "工信厅联消费函〔2025〕234号",
+      "tags": [
+        "智能制造",
+        "生物制造"
+      ],
+      "path": "data/2025/2025-06-12-manufacturing.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202506/content_7027390.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-06-09-ai",
+      "title": "两部门关于开展智能养老服务机器人结对攻关与场景应用试点工作的通知",
+      "issuer": [],
+      "date": "2025-06-09",
+      "doc_number": "工信厅联通装函〔2025〕212号",
+      "tags": [
+        "机器人"
+      ],
+      "path": "data/2025/2025-06-09-ai.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202506/content_7027053.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-05-30-computing-power",
+      "title": "工业和信息化部关于印发《算力互联互通行动计划》的通知",
+      "issuer": [],
+      "date": "2025-05-30",
+      "doc_number": "工信部信管〔2025〕119号",
+      "tags": [
+        "算力基础设施"
+      ],
+      "path": "data/2025/2025-05-30-computing-power.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202505/content_7025968.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-04-27-ai",
+      "title": "工业和信息化部办公厅关于印发《智能制造典型场景参考指引（2025年版）》的通知",
+      "issuer": [],
+      "date": "2025-04-27",
+      "doc_number": "工信厅通装函〔2025〕155号",
+      "tags": [
+        "智能制造"
+      ],
+      "path": "data/2025/2025-04-27-ai.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202504/content_7021209.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-04-23-ai",
+      "title": "两部门关于印发国家智能制造标准体系建设指南（2024版）的通知",
+      "issuer": [],
+      "date": "2025-04-23",
+      "doc_number": "工信部联科〔2025〕60号",
+      "tags": [
+        "智能制造"
+      ],
+      "path": "data/2025/2025-04-23-ai.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202504/content_7020558.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-04-17-doc-d4dc1c60",
+      "title": "人力资源社会保障部 财政部 国家卫生健康委关于全面开展工伤保险跨省异地就医直接结算工作的通知",
+      "issuer": [],
+      "date": "2025-04-17",
+      "doc_number": "人社部发〔2025〕17号",
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2025/2025-04-17-doc-d4dc1c60.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202504/content_7019317.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-03-31-manufacturing",
+      "title": "工业和信息化部办公厅 财政部办公厅关于开展第二批制造业新型技术改造城市试点工作的通知",
+      "issuer": [],
+      "date": "2025-03-31",
+      "doc_number": "工信厅联规函〔2025〕108号",
+      "tags": [
+        "智能制造"
+      ],
+      "path": "data/2025/2025-03-31-manufacturing.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202503/content_7016507.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-03-15-ai-plus",
+      "title": "关于印发《人工智能生成合成内容标识办法》的通知",
+      "issuer": [],
+      "date": "2025-03-15",
+      "doc_number": "国信办通字〔2025〕2号",
+      "tags": [
+        "人工智能+"
+      ],
+      "path": "data/2025/2025-03-15-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202503/content_7014286.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-03-05-gov-work-report",
+      "title": "政府工作报告（2025）",
+      "issuer": [
+        "国务院"
+      ],
+      "date": "2025-03-05",
+      "doc_number": null,
+      "tags": [
+        "政府工作报告"
+      ],
+      "path": "data/2025/2025-03-05-gov-work-report.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/yaowen/liebiao/202503/content_7013163.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-02-22-computing-power",
+      "title": "工业和信息化部办公厅关于组织开展算力强基揭榜行动的通知",
+      "issuer": [],
+      "date": "2025-02-22",
+      "doc_number": "工信厅通信函〔2025〕55号",
+      "tags": [
+        "算力基础设施"
+      ],
+      "path": "data/2025/2025-02-22-computing-power.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202502/content_7005004.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-02-17-manufacturing",
+      "title": "工业和信息化部等八部门关于印发《新型储能制造业高质量发展行动方案》的通知",
+      "issuer": [],
+      "date": "2025-02-17",
+      "doc_number": "工信部联电子〔2025〕7号",
+      "tags": [
+        "智能制造"
+      ],
+      "path": "data/2025/2025-02-17-manufacturing.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202502/content_7004135.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-01-15-data-elements",
+      "title": "国家发展改革委等部门印发《关于完善数据流通安全治理 更好促进数据要素市场化价值化的实施方案》的通知",
+      "issuer": [],
+      "date": "2025-01-15",
+      "doc_number": "发改数据〔2025〕18号",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2025/2025-01-15-data-elements-2.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202501/content_6998668.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-01-15-data-elements",
+      "title": "《关于完善数据流通安全治理 更好促进数据要素市场化价值化的实施方案》",
+      "issuer": [
+        "发改委等部门"
+      ],
+      "date": "2025-01-15",
+      "doc_number": "发改数据〔2025〕18号",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2025/2025-01-15-data-elements.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202501/t20250115_1395692.html",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-01-08-equipment-renewal",
+      "title": "关于2025年加力扩围实施大规模设备更新和消费品以旧换新政策的通知",
+      "issuer": [],
+      "date": "2025-01-08",
+      "doc_number": "发改环资〔2025〕13号",
+      "tags": [
+        "设备更新",
+        "消费"
+      ],
+      "path": "data/2025/2025-01-08-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202501/content_6997129.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-01-06-equipment-renewal",
+      "title": "关于设备更新贷款财政贴息政策有关事项的补充通知",
+      "issuer": [],
+      "date": "2025-01-06",
+      "doc_number": "财金〔2024〕155号",
+      "tags": [
+        "设备更新"
+      ],
+      "path": "data/2025/2025-01-06-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202501/content_6996576.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2025-01-01-doc-4a6c16b3",
+      "title": "人力资源社会保障部关于职工全年月平均工作时间和工资折算问题的通知",
+      "issuer": [],
+      "date": "2025-01-01",
+      "doc_number": "人社部发〔2025〕2号",
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2025/2025-01-01-doc-4a6c16b3.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202501/content_6995777.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-12-30-data-industry",
+      "title": "关于促进数据产业高质量发展的指导意见",
+      "issuer": [
+        "发改委、国家数据局等"
+      ],
+      "date": "2024-12-30",
+      "doc_number": "发改数据〔2024〕1836号",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2024/2024-12-30-data-industry.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202412/t20241230_1395341.html",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-12-25-digital-transformation",
+      "title": "《制造业企业数字化转型实施指南》",
+      "issuer": [
+        "工信部等三部门"
+      ],
+      "date": "2024-12-25",
+      "doc_number": "工信部联信发〔2024〕241号",
+      "tags": [
+        "智能制造"
+      ],
+      "path": "data/2024/2024-12-25-digital-transformation.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2024/art_a277e626fcdb4082918e838e6d042bb3.html",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-11-27-logistics-cost",
+      "title": "《有效降低全社会物流成本行动方案》",
+      "issuer": [
+        "中办、国办"
+      ],
+      "date": "2024-11-27",
+      "doc_number": null,
+      "tags": [
+        "物流成本"
+      ],
+      "path": "data/2024/2024-11-27-logistics-cost.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/202411/content_6989622.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-10-09-public-data",
+      "title": "关于加快公共数据资源开发利用的意见",
+      "issuer": [
+        "中办、国办"
+      ],
+      "date": "2024-10-09",
+      "doc_number": null,
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2024/2024-10-09-public-data.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.mee.gov.cn/zcwj/zyygwj/202410/t20241010_1087779.shtml",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-10-08-data-standards",
+      "title": "《国家数据标准体系建设指南》",
+      "issuer": [
+        "发改委等六部门"
+      ],
+      "date": "2024-10-08",
+      "doc_number": "发改数据〔2024〕1426号",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2024/2024-10-08-data-standards.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202410/content_6978809.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-09-30-ai",
+      "title": "工业和信息化部办公厅关于印发《智能制造典型场景参考指引（2024年版）》的通知",
+      "issuer": [],
+      "date": "2024-09-30",
+      "doc_number": "工信厅联通装函〔2024〕361号",
+      "tags": [
+        "智能制造"
+      ],
+      "path": "data/2024/2024-09-30-ai.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202409/content_6977718.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-09-20-equipment-renewal",
+      "title": "工业和信息化部办公厅关于印发工业重点行业领域设备更新和技术改造指南的通知",
+      "issuer": [],
+      "date": "2024-09-20",
+      "doc_number": "工信厅规〔2024〕33号",
+      "tags": [
+        "设备更新"
+      ],
+      "path": "data/2024/2024-09-20-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202409/content_6975557.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-09-15-equipment-renewal",
+      "title": "国家金融监督管理总局办公厅关于促进非银行金融机构支持大规模设备更新和消费品以旧换新行动的通知",
+      "issuer": [],
+      "date": "2024-09-15",
+      "doc_number": "金办发〔2024〕96号",
+      "tags": [
+        "设备更新",
+        "金融供给",
+        "消费"
+      ],
+      "path": "data/2024/2024-09-15-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202409/content_6974735.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-08-21-equipment-renewal",
+      "title": "关于印发《能源重点领域大规模设备更新实施方案》的通知",
+      "issuer": [],
+      "date": "2024-08-21",
+      "doc_number": "发改办能源〔2024〕687号",
+      "tags": [
+        "设备更新",
+        "能源"
+      ],
+      "path": "data/2024/2024-08-21-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202408/content_6969773.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-08-19-info-infrastructure",
+      "title": "关于推动新型信息基础设施协调发展有关事项的通知",
+      "issuer": [
+        "工信部等十一部门"
+      ],
+      "date": "2024-08-19",
+      "doc_number": null,
+      "tags": [
+        "信息基础设施"
+      ],
+      "path": "data/2024/2024-08-19-info-infrastructure.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202409/content_6972409.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-07-31-robotics",
+      "title": "《工业机器人行业规范条件（2024版）》和《工业机器人行业规范条件管理实施办法（2024版）》发布",
+      "issuer": [
+        "中华人民共和国工业和信息化部公告2024年第20号"
+      ],
+      "date": "2024-07-31",
+      "doc_number": null,
+      "tags": [
+        "机器人"
+      ],
+      "path": "data/2024/2024-07-31-robotics.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202407/content_6965409.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-07-25-equipment-renewal",
+      "title": "国家发展改革委 财政部印发《关于加力支持大规模设备更新和消费品以旧换新的若干措施》的通知",
+      "issuer": [],
+      "date": "2024-07-25",
+      "doc_number": "发改环资〔2024〕1104号",
+      "tags": [
+        "设备更新",
+        "消费"
+      ],
+      "path": "data/2024/2024-07-25-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202407/content_6964409.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-07-24-doc-a1f5cd43",
+      "title": "关于修订印发《防灾减灾救灾能力提升（应急救援及安全生产方向）中央预算内投资专项管理办法》的通知",
+      "issuer": [],
+      "date": "2024-07-24",
+      "doc_number": "发改投资规〔2024〕1025号",
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2024/2024-07-24-doc-a1f5cd43.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202407/content_6964222.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-07-18-deepening-reform",
+      "title": "中共中央关于进一步全面深化改革 推进中国式现代化的决定",
+      "issuer": [
+        "中共中央"
+      ],
+      "date": "2024-07-18",
+      "doc_number": null,
+      "tags": [
+        "顶层设计"
+      ],
+      "path": "data/2024/2024-07-18-deepening-reform.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/202407/content_6963770.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-07-02-standards-system",
+      "title": "四部门关于印发国家人工智能产业综合标准化体系建设指南（2024版）的通知",
+      "issuer": [],
+      "date": "2024-07-02",
+      "doc_number": "工信部联科〔2024〕113号",
+      "tags": [
+        "人工智能+",
+        "标准体系"
+      ],
+      "path": "data/2024/2024-07-02-standards-system.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202407/content_6960720.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-06-30-equipment-renewal",
+      "title": "市场监管总局关于加快推动特种设备更新有关工作的通知",
+      "issuer": [],
+      "date": "2024-06-30",
+      "doc_number": "国市监特设发〔2024〕63号",
+      "tags": [
+        "设备更新",
+        "监管"
+      ],
+      "path": "data/2024/2024-06-30-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202406/content_6960235.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-06-25-equipment-renewal",
+      "title": "关于实施设备更新贷款财政贴息政策的通知",
+      "issuer": [],
+      "date": "2024-06-25",
+      "doc_number": "财金〔2024〕54号",
+      "tags": [
+        "设备更新"
+      ],
+      "path": "data/2024/2024-06-25-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202406/content_6959323.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-06-19-ai-plus",
+      "title": "国家药监局综合司关于印发药品监管人工智能典型应用场景清单的通知",
+      "issuer": [],
+      "date": "2024-06-19",
+      "doc_number": "药监综函〔2024〕313号",
+      "tags": [
+        "人工智能+",
+        "监管"
+      ],
+      "path": "data/2024/2024-06-19-ai-plus.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202406/content_6958094.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-06-19-doc-1667697c",
+      "title": "关于进一步支持专精特新中小企业高质量发展的通知",
+      "issuer": [],
+      "date": "2024-06-19",
+      "doc_number": "财建〔2024〕148号",
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2024/2024-06-19-doc-1667697c.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202406/content_6958188.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-06-15-venture-capital",
+      "title": "《促进创业投资高质量发展的若干政策措施》",
+      "issuer": [
+        "国务院办公厅"
+      ],
+      "date": "2024-06-15",
+      "doc_number": null,
+      "tags": [
+        "创业投资"
+      ],
+      "path": "data/2024/2024-06-15-venture-capital.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/content/202406/content_6958230.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-06-07-equipment-renewal",
+      "title": "交通运输部等十三部门关于印发《交通运输大规模设备更新行动方案》的通知",
+      "issuer": [],
+      "date": "2024-06-07",
+      "doc_number": "交规划发〔2024〕62号",
+      "tags": [
+        "设备更新"
+      ],
+      "path": "data/2024/2024-06-07-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202406/content_6956170.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-06-05-standards-system",
+      "title": "《国家人工智能产业综合标准化体系建设指南（2024版）》",
+      "issuer": [
+        "工信部等四部门"
+      ],
+      "date": "2024-06-05",
+      "doc_number": null,
+      "tags": [
+        "人工智能+",
+        "标准体系"
+      ],
+      "path": "data/2024/2024-06-05-standards-system.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/tz/art/2024/art_e8ebf5600ec24d3db644150873712c5f.html",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-05-24-equipment-renewal",
+      "title": "国家发展改革委等部门关于印发《推动文化和旅游领域设备更新实施方案》的通知",
+      "issuer": [],
+      "date": "2024-05-24",
+      "doc_number": "发改社会〔2024〕701号",
+      "tags": [
+        "设备更新"
+      ],
+      "path": "data/2024/2024-05-24-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202405/content_6953464.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-05-14-smart-city",
+      "title": "关于深化智慧城市发展 推进城市全域数字化转型的指导意见",
+      "issuer": [
+        "发改委等四部门"
+      ],
+      "date": "2024-05-14",
+      "doc_number": "发改数据〔2024〕660号",
+      "tags": [
+        "智慧城市"
+      ],
+      "path": "data/2024/2024-05-14-smart-city.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202405/content_6952353.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-27-doc-1cdcc0c8",
+      "title": "财政部办公厅 工业和信息化部办公厅关于加强审计报告查验 完善专精特新“小巨人”企业服务管理的通知",
+      "issuer": [],
+      "date": "2024-04-27",
+      "doc_number": "财办会〔2024〕15号",
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2024/2024-04-27-doc-1cdcc0c8.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/content_6947918.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-18-doc-c2bdecd5",
+      "title": "工业和信息化部办公厅关于开展第六批专精特新“小巨人”企业培育和第三批专精特新“小巨人”企业复核工作的通知",
+      "issuer": [],
+      "date": "2024-04-18",
+      "doc_number": "工信厅企业函〔2024〕142号",
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2024/2024-04-18-doc-c2bdecd5.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/content_6946071.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-17-manufacturing",
+      "title": "国家金融监督管理总局 工业和信息化部 国家发展改革委关于深化制造业金融服务 助力推进新型工业化的通知",
+      "issuer": [],
+      "date": "2024-04-17",
+      "doc_number": "金发〔2024〕5号",
+      "tags": [
+        "智能制造",
+        "金融供给"
+      ],
+      "path": "data/2024/2024-04-17-manufacturing.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/content_6945700.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-12-capital-markets",
+      "title": "关于加强监管防范风险推动资本市场高质量发展的若干意见",
+      "issuer": [
+        "国务院"
+      ],
+      "date": "2024-04-12",
+      "doc_number": null,
+      "tags": [
+        "资本市场",
+        "监管"
+      ],
+      "path": "data/2024/2024-04-12-capital-markets.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/content_6944878.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-10-equipment-renewal",
+      "title": "市场监管总局等七部门关于印发《以标准提升牵引设备更新和消费品以旧换新行动方案》的通知",
+      "issuer": [],
+      "date": "2024-04-10",
+      "doc_number": "国市监标技发〔2024〕34号",
+      "tags": [
+        "设备更新",
+        "消费",
+        "监管"
+      ],
+      "path": "data/2024/2024-04-10-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/content_6944404.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-09-equipment-renewal",
+      "title": "工业和信息化部等七部门关于印发推动工业领域设备更新实施方案的通知",
+      "issuer": [],
+      "date": "2024-04-09",
+      "doc_number": "工信部联规〔2024〕53号",
+      "tags": [
+        "设备更新"
+      ],
+      "path": "data/2024/2024-04-09-equipment-renewal-2.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/content_6944252.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-09-equipment-renewal",
+      "title": "住房城乡建设部关于印发推进建筑和市政基础设施设备更新工作实施方案的通知",
+      "issuer": [],
+      "date": "2024-04-09",
+      "doc_number": "建城规〔2024〕2号",
+      "tags": [
+        "设备更新"
+      ],
+      "path": "data/2024/2024-04-09-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/content_6944067.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-02-digital-talent",
+      "title": "《加快数字人才培育支撑数字经济发展行动方案（2024—2026年）》",
+      "issuer": [
+        "人社部等九部门"
+      ],
+      "date": "2024-04-02",
+      "doc_number": null,
+      "tags": [
+        "数字人才"
+      ],
+      "path": "data/2024/2024-04-02-digital-talent.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202404/content_6945920.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-03-22-cross-border-data",
+      "title": "促进和规范数据跨境流动规定",
+      "issuer": [
+        "国家网信办"
+      ],
+      "date": "2024-03-22",
+      "doc_number": "第16号令",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2024/2024-03-22-cross-border-data.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.cac.gov.cn/2024-03/22/c_1712776611775634.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-03-07-equipment-renewal",
+      "title": "《推动大规模设备更新和消费品以旧换新行动方案》",
+      "issuer": [
+        "国务院"
+      ],
+      "date": "2024-03-07",
+      "doc_number": "国发〔2024〕7号",
+      "tags": [
+        "设备更新",
+        "消费"
+      ],
+      "path": "data/2024/2024-03-07-equipment-renewal.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202403/content_6939233.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-03-05-gov-work-report",
+      "title": "政府工作报告（2024）",
+      "issuer": [
+        "国务院"
+      ],
+      "date": "2024-03-05",
+      "doc_number": null,
+      "tags": [
+        "政府工作报告"
+      ],
+      "path": "data/2024/2024-03-05-gov-work-report.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/gongbao/2024/issue_11246/202403/content_6941846.html",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-02-01-doc-a8a8c8d4",
+      "title": "人力资源社会保障部 财政部 国家卫生健康委关于开展工伤保险跨省异地就医直接结算试点工作的通知",
+      "issuer": [],
+      "date": "2024-02-01",
+      "doc_number": "人社部发〔2024〕11号",
+      "tags": [
+        "待分类"
+      ],
+      "path": "data/2024/2024-02-01-doc-a8a8c8d4.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202402/content_6929419.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-01-29-future-industries",
+      "title": "关于推动未来产业创新发展的实施意见",
+      "issuer": [
+        "工信部等七部门"
+      ],
+      "date": "2024-01-29",
+      "doc_number": "工信部联科〔2024〕12号",
+      "tags": [
+        "未来产业"
+      ],
+      "path": "data/2024/2024-01-29-future-industries.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.miit.gov.cn/zwgk/zcwj/wjfb/yj/art/2024/art_ad15b0f08a714fd8888c0e31468b8c54.html",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-01-11-data-assets",
+      "title": "关于印发《关于加强数据资产管理的指导意见》的通知",
+      "issuer": [
+        "财政部"
+      ],
+      "date": "2024-01-11",
+      "doc_number": "财资〔2023〕141号",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2024/2024-01-11-data-assets.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "http://www.mof.gov.cn/jrttts/202401/t20240115_3925914.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-01-06-east-data-west-compute",
+      "title": "关于深入实施“东数西算”工程加快构建全国一体化算力网的实施意见",
+      "issuer": [],
+      "date": "2024-01-06",
+      "doc_number": "发改数据〔2023〕1779号",
+      "tags": [
+        "算力基础设施"
+      ],
+      "path": "data/2024/2024-01-06-east-data-west-compute.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202401/content_6924596.htm",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-01-05-data-elements",
+      "title": "关于印发《\\\"数据要素×\\\"三年行动计划（2024—2026年）》的通知",
+      "issuer": [
+        "国家数据局等 17 部门"
+      ],
+      "date": "2024-01-05",
+      "doc_number": "国数政策〔2023〕11号",
+      "tags": [
+        "数据要素"
+      ],
+      "path": "data/2024/2024-01-05-data-elements.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.nda.gov.cn/sjj/xxgk/gknr/ghjh/0909/20240909160155798592998_pc.html",
+          "type": "primary"
+        }
+      ]
+    },
+    {
+      "id": "2024-01-05-emergency-robotics",
+      "title": "应急管理部 工业和信息化部关于加快应急机器人发展的指导意见",
+      "issuer": [],
+      "date": "2024-01-05",
+      "doc_number": "应急〔2023〕148号",
+      "tags": [
+        "机器人"
+      ],
+      "path": "data/2024/2024-01-05-emergency-robotics.md",
+      "sources": [
+        {
+          "publisher": "官方原文（链接见 catalog 核验记录）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202401/content_6924441.htm",
           "type": "primary"
         }
       ]

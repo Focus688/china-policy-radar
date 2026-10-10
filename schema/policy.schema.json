@@ -2,31 +2,67 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Policy Record",
   "type": "object",
-  "required": ["id", "title", "issuer", "date", "sources", "clauses"],
+  "required": [
+    "id",
+    "title",
+    "issuer",
+    "date",
+    "sources",
+    "clauses"
+  ],
   "properties": {
     "id": {
       "type": "string",
       "description": "唯一标识: <date>-<slug>, 如 2026-10-09-xin-zhi-shengchanli-yijian"
     },
-    "title": {"type": "string"},
+    "title": {
+      "type": "string"
+    },
     "issuer": {
       "type": "array",
-      "items": {"type": "string"},
+      "items": {
+        "type": "string"
+      },
       "description": "发文机关，如 ['中共中央','国务院']"
     },
-    "date": {"type": "string", "format": "date"},
-    "doc_number": {"type": ["string", "null"], "description": "发文字号，若无则 null"},
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "doc_number": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "发文字号，若无则 null"
+    },
     "sources": {
       "type": "array",
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["publisher", "url", "type"],
+        "required": [
+          "publisher",
+          "url",
+          "type"
+        ],
         "properties": {
-          "publisher": {"type": "string"},
-          "url": {"type": "string"},
-          "type": {"enum": ["primary", "secondary"]},
-          "accessed": {"type": "string", "format": "date"}
+          "publisher": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "primary",
+              "secondary"
+            ]
+          },
+          "accessed": {
+            "type": "string",
+            "format": "date"
+          }
         }
       },
       "description": "primary = 官方原文; secondary = 权威媒体转载。至少一条 primary。"
@@ -35,17 +71,59 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["no", "heading", "excerpt"],
+        "required": [
+          "no",
+          "heading",
+          "excerpt"
+        ],
         "properties": {
-          "no": {"type": "string", "description": "条款编号，如 '(十)'"},
-          "heading": {"type": "string", "description": "条款小标题原话"},
-          "excerpt": {"type": "string", "description": "原文摘录，不得改写"},
-          "relevance": {"type": "string", "description": "与产业/投资的关联（分析性，非原文）"}
+          "no": {
+            "type": "string",
+            "description": "条款编号，如 '(十)'"
+          },
+          "heading": {
+            "type": "string",
+            "description": "条款小标题原话"
+          },
+          "excerpt": {
+            "type": "string",
+            "description": "原文摘录，不得改写"
+          },
+          "relevance": {
+            "type": "string",
+            "description": "与产业/投资的关联（分析性，非原文）"
+          }
         }
       }
     },
-    "tags": {"type": "array", "items": {"type": "string"}},
-    "supersedes": {"type": ["string", "null"], "description": "被本文件取代/修订的旧文件 id"},
-    "diff_notes": {"type": "string", "description": "与前版本相比的增删改，政策 Diff 用"}
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "supersedes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "被本文件取代/修订的旧文件 id"
+    },
+    "diff_notes": {
+      "type": "string",
+      "description": "与前版本相比的增删改，政策 Diff 用"
+    },
+    "status": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "enum": [
+        "pending",
+        "structured",
+        null
+      ],
+      "description": "pending=stub仅元数据(条款未补录); structured=条款已补录。agent 引用 pending 条目时只能引元数据与链接,不得声称条款内容"
+    }
   }
 }

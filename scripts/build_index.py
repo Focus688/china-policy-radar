@@ -37,14 +37,18 @@ def parse_front_matter(text: str):
         if not line.strip():
             continue
         if in_sources:
-            m_sub = re.match(r"^\s+-\s*publisher:\s*(.*)$", line)
-            m_kv = re.match(r"^\s+(\w+):\s*(.*)$", line)
-            if m_sub:
-                sources.append({"publisher": _unquote(m_sub.group(1))})
-            elif m_kv and sources:
-                k, v = m_kv.group(1), _unquote(m_kv.group(2))
-                sources[-1][k] = v
-            continue
+            # 顶层键（无缩进且匹配 key:）出现 = sources 块结束，回到主解析
+            if re.match(r"^[A-Za-z_]\w*:", line):
+                in_sources = False
+            else:
+                m_sub = re.match(r"^\s+-\s*publisher:\s*(.*)$", line)
+                m_kv = re.match(r"^\s+(\w+):\s*(.*)$", line)
+                if m_sub:
+                    sources.append({"publisher": _unquote(m_sub.group(1))})
+                elif m_kv and sources:
+                    k, v = m_kv.group(1), _unquote(m_kv.group(2))
+                    sources[-1][k] = v
+                continue
         m2 = re.match(r"^([A-Za-z_][\w]*):\s*(.*)$", line)
         if m2:
             key, val = m2.group(1), m2.group(2).strip()
@@ -56,6 +60,8 @@ def parse_front_matter(text: str):
                 data[key] = []
             elif val.startswith("[") and val.endswith("]"):
                 data[key] = [x.strip().strip("'\"") for x in val[1:-1].split(",") if x.strip()]
+            elif val == "null":
+                data[key] = None
             else:
                 data[key] = _unquote(val)
     return data
@@ -75,7 +81,7 @@ def main():
             "title": fm.get("title"),
             "issuer": fm.get("issuer"),
             "date": fm.get("date"),
-            "doc_number": fm.get("doc_number"),
+            "doc_number": fm.get("doc_number") or None,
             "tags": fm.get("tags", []),
             "path": str(p.relative_to(ROOT)),
             "sources": [
