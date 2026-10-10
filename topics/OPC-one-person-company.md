@@ -20,6 +20,7 @@
 
 | 文件 | 内容 |
 |---|---|
+| **[../frameworks/sector-entry-evaluation.md](../frameworks/sector-entry-evaluation.md)** | **通用框架**：退出残值判据（含餐饮 vs OPC 对比）——判断任何方向值不值得下注 |
 | **[OPC-policies.md](OPC-policies.md)** | 政策清单：国家级 1 份 + 省级 2 份 + 市级/区级 13 份，含文号与官方链接 |
 | **[OPC-subsidy-comparison.md](OPC-subsidy-comparison.md)** | **补贴口径对照**：哪些是真给钱（A/B/C/D 分级）+ 判断"实不实"的七个问题 |
 | **[OPC-eligibility.md](OPC-eligibility.md)** | **申报条件**：户籍还是注册地？上班族能不能申？含原文证据 |
