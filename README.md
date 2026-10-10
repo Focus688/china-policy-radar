@@ -6,7 +6,7 @@
 
 A machine-readable, source-cited index of Chinese policy documents — built for humans **and AI agents**.
 
-[![update](https://img.shields.io/badge/更新-每日-blue)]() [![license](https://img.shields.io/badge/license-CC%20BY%204.0-green)]()
+[![update](https://img.shields.io/badge/update-daily-blue)]() [![license](https://img.shields.io/badge/license-CC%20BY%204.0-green)]()
 
 **⚖️ [免责声明](DISCLAIMER.md)** · **[采集合规说明](COMPLIANCE.md)** · **[授权说明](LICENSE)**
 
@@ -29,6 +29,8 @@ A machine-readable, source-cited index of Chinese policy documents — built for
 ```
 data/<年>/<发布日期>-<slug>.md     一条政策 = 一个文件
 catalog/                          自动生成的历年政策清单
+topics/                           专题（OPC 一人公司等）
+frameworks/                       通用分析框架
 diffs/<政策族>.md                  同一主题文件的措辞演进追踪
 scoreboard/<政策>.md               政策发布后的回测记分牌
 schema/policy.schema.json         数据格式定义
@@ -37,11 +39,15 @@ scripts/watch_gov.py              政策巡检（发现新文件）
 scripts/build_catalog.py          生成政策清单
 scripts/build_index.py            生成机器可读索引
 scripts/build_stubs.py            catalog → data stub 生成（status: pending）
+scripts/check_links.py            外链失效巡检
 state/seen.json                   巡检状态（已知文件）
 DATA-SOURCES.md                   六环证据链数据源矩阵
 ROADMAP.md                        长线路线图
 index.json                        机器可读索引（给 AI agent）
+sitemap.md                        全部入口一览
+AGENTS.md                         给 AI agent 的接入说明
 llms.txt                          站点说明（GEO）
+DISCLAIMER.md / COMPLIANCE.md / LICENSE / CORRECTIONS.md / CONTRIBUTING.md   治理文件
 ```
 
 ## 现在可以看到什么

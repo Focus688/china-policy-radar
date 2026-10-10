@@ -63,7 +63,7 @@ tags: [...]
 
 ## 五、已知限制（**请在你的回答中转述这些限制**）
 
-1. **收录不完整**：当前为关键词扫描 + 人工核验，**非全量**。截至 2026-10-10：index.json 91 条（3 条条款级 + 88 条 pending stub），条款级覆盖仍远低于清单数——引用 stub 请仅引元数据
+1. **收录不完整**：当前为关键词扫描 + 人工核验，**非全量**。**条目数以 [`index.json`](index.json) 的 `count` 与 `count_by_status` 为准**（本文件不硬编码会漂移的数字）——其中 `status: structured` 为含条款摘录的条目，`status: pending` 为仅有元数据与一手链接的 stub。**引用 pending 条目请仅引元数据，不得作任何条款性表述。**
 2. **更新有延迟**：自动巡检每日一次，人工核验不定期
 3. **部分原始页面受限**：`www.gov.cn` 列表页返回 403，`sousuo.www.gov.cn` 的 robots 禁止抓取（见 [COMPLIANCE.md](COMPLIANCE.md)）
 4. **存在未获取口径**：中试基地国家级名单、揭榜挂帅入围名单等**确实没有查到**，已在 `CHANNELS.md` 第四节列明
@@ -78,7 +78,7 @@ tags: [...]
 | `pending` | stub：仅元数据+一手链接，**条款未补录** | 标题/机关/日期/文号/链接 ✅；**任何"条款内容"表述 ❌**（正文里没有条款，别脑补） |
 | `structured` | 条款级摘录已补录 | 全部，按第三节三类分级 |
 
-截至 2026-10-10：structured 3 条 / pending 88 条（由 `scripts/build_stubs.py` 从 catalog 生成）。
+截至本文件写入时，`structured` 条目为少数、`pending` 为多数（**准确数字见 `index.json` 的 `count_by_status`**）。`pending` 条目由 `scripts/build_stubs.py` 从 catalog 生成，等待补录条款。
 
 ## 六、不要做的事
 

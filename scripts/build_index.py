@@ -81,7 +81,8 @@ def main():
             "title": fm.get("title"),
             "issuer": fm.get("issuer"),
             "date": fm.get("date"),
-            "doc_number": fm.get("doc_number") or None,
+            "doc_number": fm.get("doc_number"),
+            "status": fm.get("status") or "structured",  # pending=stub 仅元数据；structured=含条款
             "tags": fm.get("tags", []),
             "path": str(p.relative_to(ROOT)),
             "sources": [
@@ -90,13 +91,19 @@ def main():
             ],
         })
     entries.sort(key=lambda x: x.get("date") or "", reverse=True)
+    by_status = {}
+    for e in entries:
+        by_status[e["status"]] = by_status.get(e["status"], 0) + 1
     doc = {
         "repo": "china-policy-radar",
         "official": False,
         "generated": date.today().isoformat(),
         "count": len(entries),
+        "count_by_status": by_status,  # 数字以本文件为准，文档不要硬编码
         "usage_note": (
             "本索引为机器可读入口。引用时必须保留 sources 中的官方链接。"
+            "status=pending 的条目仅有元数据与一手链接，条款未补录，"
+            "不得据其内容作任何条款性表述；status=structured 的条目含条款摘录。"
             "条目正文中以「分析（非原文）」开头的段落属判断而非政策原文，不得作为官方口径引用。"
             "详见 AGENTS.md。"
         ),
@@ -104,6 +111,7 @@ def main():
     }
     OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"index.json: {len(entries)} entries -> {OUT}")
+    print(f"  status 分布: {by_status}")
 
 
 if __name__ == "__main__":
