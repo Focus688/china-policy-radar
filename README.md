@@ -46,6 +46,7 @@ llms.txt                          站点说明（GEO）
 ## 现在可以看到什么
 
 - **[🎯 可申报通道清单](CHANNELS.md)**：从两份专项行动文件提取的资金与项目通道（含 600.6 亿国家 AI 产业投资基金）
+- **[📌 专题：OPC 一人公司](topics/OPC-one-person-company.md)**：国家/省/市政策 16 份 + [案例清单](topics/OPC-cases.md) + [海外对照](topics/OPC-overseas.md)
 - **[政策清单](catalog/2024-now-central-policies.md)**：2024 年至今中央及部委政策 68 条，全部带原文链接
 - **[人工核验清单](catalog/central-ai-tech-2024-2026.md)**：26 份重点文件，逐页核对
 - **[「人工智能+」政策族](diffs/AI-plus-timeline.md)**：用词演进（开展→持续推进→深入实施→全面实施→深化拓展）+ **13 份部委逐行业专项文件**
