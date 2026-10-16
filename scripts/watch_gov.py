@@ -29,6 +29,11 @@ from pathlib import Path
 
 REQUEST_INTERVAL = 1.2  # 秒；对政府网站保持克制
 
+# 采集护栏（防假绿）：全站不可达时旧逻辑会打印 new_count=0 并 success，
+# 与「今天真没有新政策」无法区分。低于下限一律按采集失败处理（非零退出）。
+MIN_EXPECTED_SCAN = 30        # 单次巡检至少应采集到的条数（15 关键词实测稳定 ~120）
+MAX_KEYWORD_FAILURES = 7      # 允许失败的检索词上限（超过半数即判定接口异常）
+
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "state" / "seen.json"
 
@@ -63,13 +68,15 @@ def strip_tags(s: str) -> str:
 
 def collect():
     found = {}
+    failed = []
     for idx, kw in enumerate(KEYWORDS):
         if idx:
             time.sleep(REQUEST_INTERVAL)  # 限速：遵守采集合规纪律
         try:
             d = query(kw)
         except Exception as e:  # 网络问题不中断整体巡检
-            print(f"[warn] keyword '{kw}' failed: {e}")
+            failed.append(kw)
+            print(f"[warn] keyword '{kw}' failed: {e}", file=sys.stderr)
             continue
         cats = (d.get("searchVO") or {}).get("catMap") or {}
         for cat in CATS:
@@ -86,7 +93,7 @@ def collect():
                     "matched_keyword": kw,
                     "category": cat,
                 }
-    return found
+    return found, failed
 
 
 def main():
@@ -94,7 +101,27 @@ def main():
     ap.add_argument("--mark-seen", action="store_true")
     args = ap.parse_args()
 
-    found = collect()
+    found, failed = collect()
+
+    # ---- 采集护栏：让「采集失败」无法伪装成「今天没有新政策」 ----
+    degraded = len(found) < MIN_EXPECTED_SCAN or len(failed) > MAX_KEYWORD_FAILURES
+    if degraded:
+        print(json.dumps({
+            "checked": date.today().isoformat(),
+            "total_scanned": len(found),
+            "new_count": 0,
+            "new": [],
+            "degraded": True,
+            "failed_keywords": failed,
+            "error": f"scan below floor: {len(found)} < {MIN_EXPECTED_SCAN} or {len(failed)} keyword failures",
+        }, ensure_ascii=False, indent=2))
+        print(
+            f"[fatal] 采集异常：采集到 {len(found)} 条（下限 {MIN_EXPECTED_SCAN}），"
+            f"检索词失败 {len(failed)}/{len(KEYWORDS)}。状态文件未更新，按失败退出。",
+            file=sys.stderr,
+        )
+        sys.exit(2)
+
     STATE.parent.mkdir(parents=True, exist_ok=True)
     state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else None
 
@@ -115,6 +142,7 @@ def main():
         "total_scanned": len(found),
         "new_count": len(new_items),
         "new": new_items,
+        "degraded": False,
     }, ensure_ascii=False, indent=2))
 
     if args.mark_seen:
