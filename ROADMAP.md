@@ -11,9 +11,10 @@
 - [x] Schema 定义（`schema/policy.schema.json`）
 - [x] 抓取脚本（`scripts/fetch_gov.py`）
 - [x] 首条数据（2026-10-09 新质生产力意见）
-- [ ] 建立「重点文件清单」——回补 2024 年以来中央级 AI/科技/产业相关政策
-- [ ] `index.json` 自动生成脚本
-- [ ] GitHub Action：每日巡检 gov.cn 政策发布页，发现新文件自动建 Issue
+- [x] 建立「重点文件清单」——`catalog/`（2024 至今中央级清单 + AI/科技专项清单）；逐条回补条款仍在进行
+- [x] `index.json` 自动生成脚本——`scripts/build_index.py` + `.github/workflows/rebuild-index.yml`（push 时自动重建）
+- [x] GitHub Action：每日巡检 gov.cn 政策发布页——`.github/workflows/daily-watch.yml`（每日 09:00 CST，发现新文件自动开 Issue）
+- [x] 巡检护栏：把「采集失败」与「今天无新增」分离——`scripts/watch_gov.py` 采集量低于下限即 `degraded` + 非零退出，状态文件不写入（2026-10-16）
 
 **完成标志**：中央级相关政策 2024 至今全覆盖，每条带一手链接。
 
