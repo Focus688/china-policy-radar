@@ -982,5 +982,13 @@
     "doc_number": "工信部信发〔2026〕209号",
     "matched_keyword": "人工智能",
     "category": "bumenfile"
+  },
+  "https://www.gov.cn/zhengce/zhengceku/202610/content_7084108.htm": {
+    "url": "https://www.gov.cn/zhengce/zhengceku/202610/content_7084108.htm",
+    "title": "国务院办公厅关于适应人工智能技术发展助力构建就业友好型发展方式的意见",
+    "date": "2026.10.23",
+    "doc_number": "国办发〔2026〕29号",
+    "matched_keyword": "人工智能",
+    "category": "gongwen"
   }
 }
