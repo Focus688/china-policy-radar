@@ -96,10 +96,36 @@ def collect():
     return found, failed
 
 
+def mark_seen_only(result_path: Path) -> int:
+    """通知成功后才调用的状态推进：只把本次已上报的条目写入 seen.json。
+
+    （2026-10-27 红队审计修复：原流程在生成通知之前就 --mark-seen，
+    通知失败时政策被标记已见却从未通知 → 永久丢失。）
+    """
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    if result.get("degraded"):
+        print("[fatal] result file is degraded; refusing to advance state", file=sys.stderr)
+        return 2
+    STATE.parent.mkdir(parents=True, exist_ok=True)
+    state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {}
+    before = len(state)
+    for it in result.get("new", []):
+        if it.get("url"):
+            state[it["url"]] = it
+    STATE.write_text(json.dumps(dict(sorted(state.items())), ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"[state] 上报成功后写入 {len(state) - before} 条，累计 {len(state)} 条。", file=sys.stderr)
+    return 0
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--mark-seen", action="store_true")
+    ap.add_argument("--mark-seen-only", metavar="RESULT_JSON", default=None,
+                    help="通知成功后推进状态：只标记该 result.json 中已上报的条目")
     args = ap.parse_args()
+
+    if args.mark_seen_only:
+        sys.exit(mark_seen_only(Path(args.mark_seen_only)))
 
     found, failed = collect()
 
