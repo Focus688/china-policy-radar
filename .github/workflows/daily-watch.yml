@@ -29,7 +29,8 @@ jobs:
             echo "new_count=0" >> $GITHUB_OUTPUT
             exit 0
           fi
-          python3 scripts/watch_gov.py --mark-seen > /tmp/result.json
+          # 只巡检、不推进状态：状态必须等通知成功后再落（红队审计修复 2026-10-27）
+          python3 scripts/watch_gov.py > /tmp/result.json
           cat /tmp/result.json
           python3 - <<'EOF' >> $GITHUB_OUTPUT
           import json
@@ -51,12 +52,19 @@ jobs:
               print(f"- [{it['title']}]({it['url']})  ")
               print(f"  `{it.get('date') or '日期未解析'}` · 发文字号 `{it.get('doc_number') or '—'}` · 命中关键词 `{it['matched_keyword']}`")
           EOF
-          gh issue create \
-            --title "【政策巡检】$(date +%F) 发现 ${{ steps.watch.outputs.new_count }} 条新政策" \
-            --body-file /tmp/body.md \
-            --label "policy-watch" || echo "label 不存在，忽略"
+          TITLE="【政策巡检】$(date +%F) 发现 ${{ steps.watch.outputs.new_count }} 条新政策"
+          # 带 label 失败只允许降级为「不带 label 重试」；两次都失败必须让 job 变红。
+          if ! gh issue create --title "$TITLE" --body-file /tmp/body.md --label "policy-watch"; then
+            echo "::warning::label 'policy-watch' 不可用，降级为不带 label 创建"
+            gh issue create --title "$TITLE" --body-file /tmp/body.md
+          fi
+
+      - name: 通知成功后才推进状态
+        if: success() && steps.watch.outputs.new_count != '0'
+        run: python3 scripts/watch_gov.py --mark-seen-only /tmp/result.json
 
       - name: 提交状态文件
+        if: success()
         run: |
           git config user.name "policy-radar-bot"
           git config user.email "bot@users.noreply.github.com"
