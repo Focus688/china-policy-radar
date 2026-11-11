@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中国政策雷达 · China Policy Radar — 条款级政策追踪</title>
+<meta name="description" content="把中央政策原文变成带一手链接、条款级可定位的结构化数据。开源核心 + 深度订阅。">
+<link type="application/llms.txt" href="../llms.txt">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "中国政策雷达 China Policy Radar",
+  "description": "条款级中国政府政策结构化追踪：一手来源、条款定位、跨版本 Diff、落地链条追踪。",
+  "brand": {"@type": "Brand", "name": "Levi Focus"},
+  "offers": {"@type": "Offer", "availability": "https://schema.org/PreOrder", "price": "0", "priceCurrency": "CNY"}
+}
+</script>
+<style>
+  :root { --ink:#1a2332; --accent:#c0392b; --paper:#faf9f6; --muted:#6b7280; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif; background:var(--paper); color:var(--ink); line-height:1.7; }
+  .wrap { max-width:860px; margin:0 auto; padding:48px 24px; }
+  header { border-bottom:3px solid var(--accent); padding-bottom:24px; margin-bottom:40px; }
+  h1 { font-size:2rem; letter-spacing:1px; }
+  .tag { color:var(--accent); font-weight:600; margin-top:8px; }
+  h2 { font-size:1.25rem; margin:36px 0 12px; }
+  .card { background:#fff; border:1px solid #e5e1d8; border-radius:10px; padding:20px 24px; margin:14px 0; }
+  .layer { display:flex; gap:12px; align-items:baseline; }
+  .layer .no { font-size:1.4rem; font-weight:700; color:var(--accent); min-width:2.2em; }
+  table { width:100%; border-collapse:collapse; margin:14px 0; background:#fff; }
+  th,td { border:1px solid #e5e1d8; padding:10px 14px; text-align:left; font-size:.95rem; }
+  th { background:#f0ede6; }
+  .cta { background:var(--ink); color:#fff; border-radius:10px; padding:28px; margin-top:36px; }
+  .cta a { color:#ffd9d2; }
+  code { background:#f0ede6; padding:2px 6px; border-radius:4px; font-size:.9em; }
+  .fine { font-size:.85rem; color:var(--muted); margin-top:32px; border-top:1px solid #e5e1d8; padding-top:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>中国政策雷达 <span style="color:var(--muted);font-size:1.1rem;">China Policy Radar</span></h1>
+  <p class="tag">把政策原文变成可定位、可对比、可追溯的结构化数据</p>
+  <p style="margin-top:12px;color:var(--muted);">核心数据永久开源 · 深度追踪服务筹备中</p>
+</header>
+
+<h2>解决什么问题</h2>
+<p>读中国政策文件最痛的不是"找不到"，而是：<strong>不知道哪句是新表述、哪条会落地、落地到哪个部委哪笔钱</strong>。转载号在搬运全文，没有人做条款级的活。</p>
+
+<h2>三层能力（建设中，进度透明）</h2>
+<div class="card layer"><span class="no">L1</span><div><strong>结构化原文</strong> ✅ 已上线 — 每条政策带一手来源链接（gov.cn 原文）、发文机关、条款级定位。<a href="https://github.com/Focus688/china-policy-radar" style="color:var(--accent);">看开源数据 →</a></div></div>
+<div class="card layer"><span class="no">L2</span><div><strong>跨版本 Diff</strong> — 同一主题族（如"人工智能+"）的措辞演变时间轴：从「开展」到「深入实施」到「全面实施」，逐词对齐。<em>建设中</em></div></div>
+<div class="card layer"><span class="no">L3</span><div><strong>落地链条追踪</strong> — 中央文件 → 部委细则 → 地方方案 → 财政实际口径，一条链走到底。<em>规划中</em></div></div>
+
+<h2>开源 vs 订阅</h2>
+<table>
+  <tr><th></th><th>开源核心（永久免费）</th><th>深度订阅（筹备中）</th></tr>
+  <tr><td>政策结构化数据</td><td>✅ 全量开放</td><td>✅ 包含</td></tr>
+  <tr><td>主题族 Diff 时间轴</td><td>抽样公开</td><td>✅ 全量 + 变更邮件提醒</td></tr>
+  <tr><td>落地链条追踪</td><td>—</td><td>✅ 按主题定制</td></tr>
+  <tr><td>数据格式</td><td>JSON / Markdown</td><td>API（规划）</td></tr>
+</table>
+
+<div class="cta">
+  <h2 style="color:#fff;margin-top:0;">订阅意向登记</h2>
+  <p>深度订阅尚未开放定价。留下联系方式，L2 上线时第一批通知，并赠送一份主题族 Diff 样例。</p>
+  <p style="margin-top:12px;font-size:1.05rem;">📮 <a href="mailto:focus688@outlook.com?subject=政策雷达订阅意向">focus688@outlook.com</a>（邮件标题注明关注主题，如"AI+""专精特新"）</p>
+  <p style="margin-top:8px;">🐙 或 <a href="https://github.com/Focus688/china-policy-radar/issues/new">在仓库开 Issue</a> 留言</p>
+</div>
+
+<p class="fine">
+本页所有政策数据引自官方公开发布（gov.cn 及部委官网），分析与解读内容均标注「分析（非原文）」。抓取有误公开更正，不静默修改。建仓日期 2026-10-09，判据到期 2026-12-09——若届时无人使用，本项目收缩为纯自用工具，订阅计划随之取消。
+</p>
+
+</div>
+</body>
+</html>
