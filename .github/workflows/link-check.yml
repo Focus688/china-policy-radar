@@ -51,9 +51,10 @@ jobs:
               for r in d["blocked"][:15]:
                   print(f"- `{r['verdict']}` {r['url'][:100]}")
           EOF
-          gh issue create \
-            --title "【外链巡检】$(date +%F) 发现 ${{ steps.check.outputs.dead }} 条死链" \
-            --body-file /tmp/body.md || \
-          gh issue create \
-            --title "【外链巡检】$(date +%F) 发现 ${{ steps.check.outputs.dead }} 条死链" \
-            --body-file /tmp/body.md
+          TITLE="【外链巡检】$(date +%F) 发现 ${{ steps.check.outputs.dead }} 条死链"
+          # 带 label 失败只允许降级为「不带 label 重试」；两次都失败必须让 job 变红，
+          # 不能像旧版那样用 || 把第二次失败也吞掉（两次调用相同 = 静默降级）。
+          if ! gh issue create --title "$TITLE" --body-file /tmp/body.md --label "link-check"; then
+            echo "::warning::label 'link-check' 不可用，降级为不带 label 创建"
+            gh issue create --title "$TITLE" --body-file /tmp/body.md
+          fi

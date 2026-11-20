@@ -6,6 +6,26 @@
 
 ---
 
+## 2026-11-20
+
+### C-004 · build_stubs.py 文号去重失效、同日 id 碰撞与文号错填 issuer（工程缺陷）
+
+- **位置**：`scripts/build_stubs.py`；受影响数据 `data/2025/2025-01-15-data-elements-2.md`、`data/2024/2024-04-09-equipment-renewal-2.md`、`data/2026/2026-04-03-ai-plus-2.md`、`data/2026/2026-04-10-ai-plus-2.md`、`data/2024/2024-07-31-robotics.md`、`data/2026/2026-06-18-ai-plus.md`
+- **问题（三个独立缺陷）**：
+  1. **文号去重失效**：`existing_keys()` 读 YAML 时未剥除引号，`doc_number: "国发〔2024〕3号"` 与不带引号写法被当成两个文号；且 `main()` 新建 stub 后未把该文号登记进 `ids["doc"]`，同一次运行内同一文号会重复建 stub。
+  2. **同一发布日 id 碰撞**：`render_stub()` 用 `slug` 而非最终文件名 stem 生成 frontmatter `id`，同一天第二份文件落盘为 `...-2.md` 时，`id` 仍与第一份相同 → 违反「id 唯一」。
+  3. **文号错填 issuer**：`parse_catalog()` 只识别 `〔年〕号` 与 `第N号`，遇到 `工业和信息化部公告2024年第20号`、`商建发2026年第89号` 时把整段文号当作发文机关写入 `issuer`，`doc_number` 反而为 null。
+- **错误性质**：**工程缺陷**（静默数据污染）——不报错、不崩溃，只是让机器可读层的身份字段悄悄重复与错位。
+- **发现方**：2026-11 矩阵审计（外部架构审阅 + 作者逐条复核 `index.json` 与 `data/`）。
+- **影响**：`index.json` 出现重复 `id`（按 id 检索会命中错条目）；文号检索失效（文号不在 `doc_number` 字段）；同文号被重复建档，虚增条目数。
+- **修正**：
+  - 代码：`existing_keys()` 对文号 `.strip().strip('"\'')`；`main()` 新建后登记 `doc_number`；`render_stub(r, out.stem)` 保证 id 与文件名 1:1；新增 `is_doc_number()` + 4 条发文字号正则（〔〕式 / 第N号 / 公告YYYY年第N号 / 机关简称+发+YYYY年第N号）。
+  - 数据：合并重复政策 `2025-01-15-data-elements-2.md` → 主文件（gov.cn 链接补为第二条 primary source 后删除副本）；3 组同日文件 `id` 改为对应文件名 stem；2 处误填 `issuer` 的文号移回 `doc_number`，`issuer` 规范为 `[工业和信息化部]`、`[商务部等8部门]`。
+  - 重建 `index.json`：**90 entries，id 全部唯一，id == 文件名 stem**；`build_stubs.py --dry-run` 幂等（created=0）。
+- **未改动**：所有 stub 的标题、日期、一手 URL、status 与条款内容；本次只修元数据与生成脚本，未编造任何条款原文。
+
+---
+
 ## 2026-10-10
 
 ### C-003 · 杨浦补贴对象错位（数据错误）
@@ -45,4 +65,4 @@
 
 ---
 
-最后更新：2026-10-10
+最后更新：2026-11-20
