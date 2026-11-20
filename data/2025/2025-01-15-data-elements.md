@@ -8,6 +8,9 @@ sources:
   - publisher: 官方原文（链接见 catalog 核验记录）
     url: https://www.ndrc.gov.cn/xxgk/zcfb/tz/202501/t20250115_1395692.html
     type: primary
+  - publisher: 中国政府网（国务院政策文件库）
+    url: https://www.gov.cn/zhengce/zhengceku/202501/content_6998668.htm
+    type: primary
 tags: [数据要素]
 status: pending
 supersedes: null

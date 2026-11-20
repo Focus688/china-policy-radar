@@ -1,5 +1,5 @@
 ---
-id: 2024-04-09-equipment-renewal
+id: 2024-04-09-equipment-renewal-2
 title: "工业和信息化部等七部门关于印发推动工业领域设备更新实施方案的通知"
 issuer: []
 date: 2024-04-09

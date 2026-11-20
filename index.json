@@ -1,11 +1,11 @@
 {
   "repo": "china-policy-radar",
   "official": false,
-  "generated": "2026-10-10",
-  "count": 91,
+  "generated": "2026-11-20",
+  "count": 90,
   "count_by_status": {
     "structured": 3,
-    "pending": 88
+    "pending": 87
   },
   "usage_note": "本索引为机器可读入口。引用时必须保留 sources 中的官方链接。status=pending 的条目仅有元数据与一手链接，条款未补录，不得据其内容作任何条款性表述；status=structured 的条目含条款摘录。条目正文中以「分析（非原文）」开头的段落属判断而非政策原文，不得作为官方口径引用。详见 AGENTS.md。",
   "entries": [
@@ -98,10 +98,10 @@
       "id": "2026-06-18-ai-plus",
       "title": "商务部等8部门关于加快“人工智能+消费”发展的实施意见",
       "issuer": [
-        "商建发2026年第89号"
+        "商务部等8部门"
       ],
       "date": "2026-06-18",
-      "doc_number": null,
+      "doc_number": "商建发2026年第89号",
       "status": "pending",
       "tags": [
         "人工智能+",
@@ -177,7 +177,7 @@
       ]
     },
     {
-      "id": "2026-04-10-ai-plus",
+      "id": "2026-04-10-ai-plus-2",
       "title": "教育部等五部门关于印发《“人工智能+教育”行动计划》的通知",
       "issuer": [],
       "date": "2026-04-10",
@@ -218,7 +218,7 @@
       ]
     },
     {
-      "id": "2026-04-03-ai-plus",
+      "id": "2026-04-03-ai-plus-2",
       "title": "工业和信息化部等十部门关于印发《人工智能科技伦理审查与服务办法（试行）》的通知",
       "issuer": [],
       "date": "2026-04-03",
@@ -938,25 +938,6 @@
     },
     {
       "id": "2025-01-15-data-elements",
-      "title": "国家发展改革委等部门印发《关于完善数据流通安全治理 更好促进数据要素市场化价值化的实施方案》的通知",
-      "issuer": [],
-      "date": "2025-01-15",
-      "doc_number": "发改数据〔2025〕18号",
-      "status": "pending",
-      "tags": [
-        "数据要素"
-      ],
-      "path": "data/2025/2025-01-15-data-elements-2.md",
-      "sources": [
-        {
-          "publisher": "官方原文（链接见 catalog 核验记录）",
-          "url": "https://www.gov.cn/zhengce/zhengceku/202501/content_6998668.htm",
-          "type": "primary"
-        }
-      ]
-    },
-    {
-      "id": "2025-01-15-data-elements",
       "title": "《关于完善数据流通安全治理 更好促进数据要素市场化价值化的实施方案》",
       "issuer": [
         "发改委等部门"
@@ -972,6 +953,11 @@
         {
           "publisher": "官方原文（链接见 catalog 核验记录）",
           "url": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/202501/t20250115_1395692.html",
+          "type": "primary"
+        },
+        {
+          "publisher": "中国政府网（国务院政策文件库）",
+          "url": "https://www.gov.cn/zhengce/zhengceku/202501/content_6998668.htm",
           "type": "primary"
         }
       ]
@@ -1243,10 +1229,10 @@
       "id": "2024-07-31-robotics",
       "title": "《工业机器人行业规范条件（2024版）》和《工业机器人行业规范条件管理实施办法（2024版）》发布",
       "issuer": [
-        "中华人民共和国工业和信息化部公告2024年第20号"
+        "工业和信息化部"
       ],
       "date": "2024-07-31",
-      "doc_number": null,
+      "doc_number": "工业和信息化部公告2024年第20号",
       "status": "pending",
       "tags": [
         "机器人"
@@ -1622,7 +1608,7 @@
       ]
     },
     {
-      "id": "2024-04-09-equipment-renewal",
+      "id": "2024-04-09-equipment-renewal-2",
       "title": "工业和信息化部等七部门关于印发推动工业领域设备更新实施方案的通知",
       "issuer": [],
       "date": "2024-04-09",

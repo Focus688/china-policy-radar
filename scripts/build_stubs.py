@@ -48,7 +48,7 @@ def parse_catalog(path: Path):
         rest_cells = [c.replace("**", "").strip() for c in cells[1:] if c.strip() not in ("—", "-", "")]
         doc_number = issuer = ""
         for c in rest_cells:
-            if ("〔" in c and "号" in c) or re.match(r"^第?\d+号", c):
+            if is_doc_number(c):
                 doc_number = c
             elif not issuer:
                 issuer = c
@@ -56,6 +56,24 @@ def parse_catalog(path: Path):
         rows.append({"date": f"{y}-{mo}-{d}", "title": title, "url": url,
                      "issuer": issuer, "doc_number": doc_number, "tags": tags})
     return rows
+
+
+# 发文字号形态：
+#   国发〔2024〕3号 / 国办发〔2025〕11号        （〔〕式，历史常态）
+#   第 794 号 / 第794号                          （主席令、部令）
+#   工业和信息化部公告2024年第20号                （公告式）
+#   商建发2026年第89号                           （机关简称+发+年份+年第N号）
+# 识别失败会把文号误塞进 issuer，因此这里放宽到「看起来像发文字号」就收。
+DOC_NUMBER_RES = [
+    re.compile(r"[〔\[][12]\d{3}[〕\]]\s*\d+\s*号"),          # 国发〔2024〕3号
+    re.compile(r"^第\s*\d+\s*号$"),                              # 第794号
+    re.compile(r"公告\s*\d{4}\s*年\s*第\s*\d+\s*号"),        # 工业和信息化部公告2024年第20号
+    re.compile(r"[\u4e00-\u9fa5]{2,}发\s*\d{4}\s*年\s*第\s*\d+\s*号"),  # 商建发2026年第89号
+]
+
+
+def is_doc_number(cell: str) -> bool:
+    return any(r.search(cell) for r in DOC_NUMBER_RES)
 
 
 TOPIC_SLUGS = [
@@ -122,8 +140,12 @@ def existing_keys():
         for u in re.findall(r"url:\s*(https?://\S+)", fm):
             ids["url"].add(u.rstrip("/"))
         dn = re.search(r"doc_number:\s*(.+)", fm)
-        if dn and dn.group(1).strip() not in ("null", "[]", ""):
-            ids["doc"].add(dn.group(1).strip())
+        if dn:
+            # YAML 里文号可能写成 "国发〔2024〕3号"（带引号），去重前必须剥引号，
+            # 否则同一文号在「带引号/不带引号」两种写法下会被当成两条。
+            key = dn.group(1).strip().strip('"\'')
+            if key not in ("null", "[]", ""):
+                ids["doc"].add(key)
         dt = re.search(r"^date:\s*(\S+)", fm, re.M)
         tt = re.search(r"^title:\s*[\"']?(.{0,12})", fm, re.M)
         if dt and tt:
@@ -131,14 +153,14 @@ def existing_keys():
     return ids
 
 
-def render_stub(r: dict, slug: str) -> str:
+def render_stub(r: dict, file_stem: str) -> str:
     issuer_yaml = f"[{r['issuer']}]" if r["issuer"] else "[]"
     dn = r["doc_number"] if r["doc_number"] else None
     dn_yaml = f'"{dn}"' if dn else "null"
     body = "\n".join(f"> {ln}" for ln in r["title"].splitlines()[:1])
     import json as _json
     return f"""---
-id: {r['date']}-{slug}
+id: {file_stem}
 title: {_json.dumps(r['title'], ensure_ascii=False)}
 issuer: {issuer_yaml}
 date: {r['date']}
@@ -192,9 +214,13 @@ def main():
                 print(f"[dry] {out.relative_to(ROOT)}  <- {r['title'][:40]}")
             else:
                 out.parent.mkdir(parents=True, exist_ok=True)
-                out.write_text(render_stub(r, slug), encoding="utf-8")
+                # 传最终文件名 stem（可能带 -2/-3 去重后缀），保证 id 与文件名 1:1；
+                # 再登记文号，否则同一文号在本次运行内会被重复建 stub。
+                out.write_text(render_stub(r, out.stem), encoding="utf-8")
                 ids["dt"].add(key_dt)
                 ids["url"].add(r["url"].rstrip("/"))
+                if r["doc_number"]:
+                    ids["doc"].add(r["doc_number"].strip().strip('"\''))
             created += 1
     print(f"stubs: created={created} skipped_existing={skipped} (dry_run={args.dry_run})")
 
