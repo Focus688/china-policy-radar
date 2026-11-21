@@ -38,7 +38,7 @@ diffs/<政策族>.md                  同一主题文件的措辞演进追踪
 scoreboard/<政策>.md               政策发布后的回测记分牌
 schema/policy.schema.json         数据格式定义
 scripts/fetch_gov.py              抓取单篇政策原文
-scripts/watch_gov.py              政策巡检（发现新文件）
+scripts/watch_gov.py              政策巡检（发现新文件；早于 180 天的历史条目不报为新政策）
 scripts/build_catalog.py          生成政策清单
 scripts/build_index.py            生成机器可读索引
 scripts/build_stubs.py            catalog → data stub 生成（status: pending）
