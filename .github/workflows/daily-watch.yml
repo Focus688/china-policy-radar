@@ -27,6 +27,7 @@ jobs:
             python3 scripts/watch_gov.py --mark-seen > /dev/null
             echo "首次运行，已建立基线"
             echo "new_count=0" >> $GITHUB_OUTPUT
+            echo "stale_count=0" >> $GITHUB_OUTPUT
             exit 0
           fi
           # 只巡检、不推进状态：状态必须等通知成功后再落（红队审计修复 2026-10-27）
@@ -36,6 +37,9 @@ jobs:
           import json
           d = json.load(open('/tmp/result.json'))
           print(f"new_count={d['new_count']}")
+          print(f"stale_count={d.get('stale_count', 0)}")
+          if d.get('undated_count'):
+              print(f"::warning::{d['undated_count']} 条日期缺失/格式不认识，已按 fail-open 保留上报")
           EOF
 
       - name: 有新政策则开 Issue
@@ -62,6 +66,10 @@ jobs:
       - name: 通知成功后才推进状态
         if: success() && steps.watch.outputs.new_count != '0'
         run: python3 scripts/watch_gov.py --mark-seen-only /tmp/result.json
+
+      - name: 无新政策时也记录过期条目（防每日重扫）
+        if: success() && steps.watch.outputs.new_count == '0' && steps.watch.outputs.stale_count != '0'
+        run: python3 scripts/watch_gov.py --mark-stale-only /tmp/result.json
 
       - name: 提交状态文件
         if: success()

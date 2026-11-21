@@ -24,7 +24,7 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 
 REQUEST_INTERVAL = 1.2  # 秒；对政府网站保持克制
@@ -33,6 +33,13 @@ REQUEST_INTERVAL = 1.2  # 秒；对政府网站保持克制
 # 与「今天真没有新政策」无法区分。低于下限一律按采集失败处理（非零退出）。
 MIN_EXPECTED_SCAN = 30        # 单次巡检至少应采集到的条数（15 关键词实测稳定 ~120）
 MAX_KEYWORD_FAILURES = 7      # 允许失败的检索词上限（超过半数即判定接口异常）
+
+# 时效闸门（防「历史条目冒充新政策」）：gov.cn 检索按关键词返回全时段结果，
+# 而本脚本的「新」只代表「未见过」。首次被检索到的旧文因此会伪装成新政策——
+# 2026-11-20 实锤：2024-02-25 的《中小学人工智能教育基地名单》被上报为「新政策」。
+# 定义：新 = 未见过 AND 发布日在窗口内。超出窗口的条目仍写入 seen（避免每日重扫），
+# 但不进 new、不进 Issue。日期无法解析时不静默丢弃，保留并计入 undated。
+MAX_POLICY_AGE_DAYS = 180
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / "state" / "seen.json"
@@ -96,6 +103,37 @@ def collect():
     return found, failed
 
 
+def parse_pub_date(s):
+    """解析检索接口的 pubtimeStr（实测两种写法：2024.02.25 / 2024-02-25）。"""
+    for fmt in ("%Y-%m-%d", "%Y.%m.%d", "%Y/%m/%d"):
+        try:
+            return datetime.strptime((s or "").strip(), fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
+def split_fresh(items, today=None, max_age_days=MAX_POLICY_AGE_DAYS):
+    """把「未见过」条目拆成 fresh / stale / undated。
+
+    fresh   = 窗口内，可上报
+    stale   = 超出窗口，属历史档案，不上报
+    undated = 日期缺失或格式不认识，保留上报（fail-open，但单独计数以便发现格式漂移）
+    """
+    today = today or date.today()
+    fresh, stale, undated = [], [], []
+    for it in items:
+        d = parse_pub_date(it.get("date"))
+        if d is None:
+            undated.append(it)
+            fresh.append(it)
+        elif (today - d).days > max_age_days:
+            stale.append(it)
+        else:
+            fresh.append(it)
+    return fresh, stale, undated
+
+
 def mark_seen_only(result_path: Path) -> int:
     """通知成功后才调用的状态推进：只把本次已上报的条目写入 seen.json。
 
@@ -109,11 +147,58 @@ def mark_seen_only(result_path: Path) -> int:
     STATE.parent.mkdir(parents=True, exist_ok=True)
     state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {}
     before = len(state)
-    for it in result.get("new", []):
+    for it in list(result.get("new", [])) + list(result.get("stale", [])):
         if it.get("url"):
             state[it["url"]] = it
     STATE.write_text(json.dumps(dict(sorted(state.items())), ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"[state] 上报成功后写入 {len(state) - before} 条，累计 {len(state)} 条。", file=sys.stderr)
+    return 0
+
+
+def mark_stale_only(result_path: Path) -> int:
+    """只把本次判定为过期（超窗口）的条目写入 seen，供「今天无新政策」路径使用。
+
+    目的：过期条目不应每日重复参与判定，但也不该因为没上报就永远留在未见过状态。
+    与 mark_seen_only 一样拒绝在 degraded 结果上推进状态。
+    """
+    result = json.loads(result_path.read_text(encoding="utf-8"))
+    if result.get("degraded"):
+        print("[fatal] result file is degraded; refusing to advance state", file=sys.stderr)
+        return 2
+    STATE.parent.mkdir(parents=True, exist_ok=True)
+    state = json.loads(STATE.read_text(encoding="utf-8")) if STATE.exists() else {}
+    before = len(state)
+    for it in result.get("stale", []):
+        if it.get("url"):
+            state[it["url"]] = it
+    STATE.write_text(json.dumps(dict(sorted(state.items())), ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"[state] 过期条目写入 {len(state) - before} 条，累计 {len(state)} 条。", file=sys.stderr)
+    return 0
+
+
+def self_test() -> int:
+    """离线自检：只验证时效闸门，不联网、不写状态。"""
+    today = date(2026, 11, 21)
+    items = [
+        {"url": "https://x/2024", "date": "2024.02.25"},   # 实锤误报样本
+        {"url": "https://x/fresh", "date": "2026-11-01"},
+        {"url": "https://x/boundary", "date": "2026-05-25"},  # 正好 180 天
+        {"url": "https://x/too-old", "date": "2026-05-24"},   # 181 天
+        {"url": "https://x/undated", "date": None},
+        {"url": "https://x/bad-format", "date": "2026.13.99"},
+    ]
+    fresh, stale, undated = split_fresh(items, today=today, max_age_days=180)
+    f = [x["url"] for x in fresh]
+    s = [x["url"] for x in stale]
+    u = [x["url"] for x in undated]
+    assert s == ["https://x/2024", "https://x/too-old"], s
+    assert "https://x/fresh" in f and "https://x/boundary" in f, f
+    assert "https://x/undated" in f and "https://x/bad-format" in f, f
+    assert u == ["https://x/undated", "https://x/bad-format"], u
+    assert parse_pub_date("2024.02.25") == date(2024, 2, 25)
+    assert parse_pub_date("2024-02-25") == date(2024, 2, 25)
+    assert parse_pub_date("") is None and parse_pub_date("2024年2月25日") is None
+    print(f"SELF-TEST PASS: 6 items -> fresh={len(fresh)} stale={len(stale)} undated={len(undated)}; 窗口={180}d")
     return 0
 
 
@@ -122,10 +207,19 @@ def main():
     ap.add_argument("--mark-seen", action="store_true")
     ap.add_argument("--mark-seen-only", metavar="RESULT_JSON", default=None,
                     help="通知成功后推进状态：只标记该 result.json 中已上报的条目")
+    ap.add_argument("--mark-stale-only", metavar="RESULT_JSON", default=None,
+                    help="无新政策时推进状态：只标记该 result.json 中判定为过期的条目")
+    ap.add_argument("--self-test", action="store_true", help="离线自检时效闸门，不联网")
     args = ap.parse_args()
+
+    if args.self_test:
+        sys.exit(self_test())
 
     if args.mark_seen_only:
         sys.exit(mark_seen_only(Path(args.mark_seen_only)))
+
+    if args.mark_stale_only:
+        sys.exit(mark_stale_only(Path(args.mark_stale_only)))
 
     found, failed = collect()
 
@@ -160,14 +254,19 @@ def main():
         return
 
     seen = state
-    new_items = [found[u] for u in found if u not in seen]
-    new_items.sort(key=lambda x: x.get("date") or "", reverse=True)
+    unseen = [found[u] for u in found if u not in seen]
+    unseen.sort(key=lambda x: x.get("date") or "", reverse=True)
+    new_items, stale_items, undated_items = split_fresh(unseen)
 
     print(json.dumps({
         "checked": date.today().isoformat(),
         "total_scanned": len(found),
         "new_count": len(new_items),
         "new": new_items,
+        "stale_count": len(stale_items),
+        "stale": stale_items,
+        "undated_count": len(undated_items),
+        "max_age_days": MAX_POLICY_AGE_DAYS,
         "degraded": False,
     }, ensure_ascii=False, indent=2))
 
