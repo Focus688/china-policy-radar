@@ -1,11 +1,11 @@
 {
   "repo": "china-policy-radar",
   "official": false,
-  "generated": "2026-11-20",
+  "generated": "2026-11-21",
   "count": 90,
   "count_by_status": {
-    "structured": 3,
-    "pending": 87
+    "structured": 14,
+    "pending": 76
   },
   "usage_note": "本索引为机器可读入口。引用时必须保留 sources 中的官方链接。status=pending 的条目仅有元数据与一手链接，条款未补录，不得据其内容作任何条款性表述；status=structured 的条目含条款摘录。条目正文中以「分析（非原文）」开头的段落属判断而非政策原文，不得作为官方口径引用。详见 AGENTS.md。",
   "entries": [
@@ -78,10 +78,12 @@
     {
       "id": "2026-07-08-ai-plus",
       "title": "关于加快推进“人工智能＋人社”应用发展的实施意见",
-      "issuer": [],
+      "issuer": [
+        "人力资源社会保障部"
+      ],
       "date": "2026-07-08",
       "doc_number": "人社部发〔2026〕40号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+"
       ],
@@ -102,7 +104,7 @@
       ],
       "date": "2026-06-18",
       "doc_number": "商建发2026年第89号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+",
         "消费"
@@ -119,10 +121,12 @@
     {
       "id": "2026-06-10-ai-plus",
       "title": "工业和信息化部关于印发《“人工智能+信息通信”创新发展实施意见（2026—2028年）》的通知",
-      "issuer": [],
+      "issuer": [
+        "工业和信息化部"
+      ],
       "date": "2026-06-10",
       "doc_number": "工信部通信〔2026〕121号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+"
       ],
@@ -158,10 +162,15 @@
     {
       "id": "2026-05-08-ai-plus",
       "title": "国家发展改革委 国家能源局 工业和信息化部 国家数据局印发《关于促进人工智能与能源双向赋能的行动方案》的通知",
-      "issuer": [],
+      "issuer": [
+        "国家发展改革委",
+        "国家能源局",
+        "工业和信息化部",
+        "国家数据局"
+      ],
       "date": "2026-05-08",
       "doc_number": "国能发科技〔2026〕34号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+",
         "数据要素",
@@ -179,10 +188,12 @@
     {
       "id": "2026-04-10-ai-plus-2",
       "title": "教育部等五部门关于印发《“人工智能+教育”行动计划》的通知",
-      "issuer": [],
+      "issuer": [
+        "教育部等五部门"
+      ],
       "date": "2026-04-10",
       "doc_number": "教科信〔2026〕1号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+",
         "教育"
@@ -200,11 +211,11 @@
       "id": "2026-04-10-ai-plus",
       "title": "人工智能拟人化互动服务管理暂行办法",
       "issuer": [
-        "国家网信办"
+        "国家网信办等"
       ],
       "date": "2026-04-10",
       "doc_number": null,
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+"
       ],
@@ -220,10 +231,12 @@
     {
       "id": "2026-04-03-ai-plus-2",
       "title": "工业和信息化部等十部门关于印发《人工智能科技伦理审查与服务办法（试行）》的通知",
-      "issuer": [],
+      "issuer": [
+        "工业和信息化部等十部门"
+      ],
       "date": "2026-04-03",
       "doc_number": "工信部联科〔2026〕75号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+",
         "AI治理"
@@ -240,10 +253,12 @@
     {
       "id": "2026-04-03-ai-plus",
       "title": "国家药监局关于“人工智能+药品监管”的实施意见",
-      "issuer": [],
+      "issuer": [
+        "国家药监局"
+      ],
       "date": "2026-04-03",
       "doc_number": "国药监综〔2026〕6号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+",
         "监管"
@@ -302,10 +317,12 @@
     {
       "id": "2026-02-18-ai-plus",
       "title": "国家发展改革委等部门关于加快招标投标领域人工智能推广应用的实施意见",
-      "issuer": [],
+      "issuer": [
+        "国家发展改革委等部门"
+      ],
       "date": "2026-02-18",
       "doc_number": "发改法规〔2026〕195号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+"
       ],
@@ -321,10 +338,12 @@
     {
       "id": "2026-02-09-data-elements",
       "title": "国家数据局等部门关于培育数据流通服务机构 加快推进数据要素市场化价值化的意见",
-      "issuer": [],
+      "issuer": [
+        "国家数据局等部门"
+      ],
       "date": "2026-02-09",
       "doc_number": "国数政策〔2026〕6号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "数据要素"
       ],
@@ -379,10 +398,12 @@
     {
       "id": "2026-01-07-ai-plus",
       "title": "工业和信息化部办公厅关于印发《工业互联网和人工智能融合赋能行动方案》的通知",
-      "issuer": [],
+      "issuer": [
+        "工业和信息化部办公厅"
+      ],
       "date": "2026-01-07",
       "doc_number": "工信厅信管〔2025〕76号",
-      "status": "pending",
+      "status": "structured",
       "tags": [
         "人工智能+"
       ],

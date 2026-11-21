@@ -3,6 +3,9 @@
 > **非官方项目（Unofficial）** · 本仓库与中国政府机关无任何隶属或合作关系。
 > 把中国的政策文件变成**结构化、可追溯、机器可读**的数据层。
 > 每条结论都带原始出处链接。没有引用，不予收录。
+>
+> 覆盖口径：**14 条已结构化（含条款级原文摘录）＋ 76 条为带一手链接的索引条目（`status: pending`，条款未补录）**。
+> 实时数字以 `index.json` 的 `count_by_status` 为准；pending 条目**不得**用于任何条款性表述。
 
 A machine-readable, source-cited index of Chinese policy documents — built for humans **and AI agents**.
 
@@ -60,6 +63,7 @@ DISCLAIMER.md / COMPLIANCE.md / LICENSE / CORRECTIONS.md / CONTRIBUTING.md   治
 - **[「人工智能+」政策族](diffs/AI-plus-timeline.md)**：用词演进（开展→持续推进→深入实施→全面实施→深化拓展）+ **13 份部委逐行业专项文件**
 - **[「人工智能+制造」结构化](data/2025/2025-12-25-ai-plus-manufacturing.md)**：7 大任务 21 项措施 + 2 附件
 - **[「人工智能+软件」结构化](data/2026/2026-09-11-ai-plus-software.md)**：6 方面 19 项任务
+- **[2026-11-21 结构化批次](docs/structure-batch-2026-11-21.md)**：11 份「人工智能+」行业文件补录条款，44 段引用逐字校验
 - **[回测记分牌](scoreboard/2026-10-09-xin-zhi-shengchanli.md)**：新质生产力意见的 T0 基线数据与观察节点
 
 
@@ -102,10 +106,12 @@ curl -s https://raw.githubusercontent.com/Focus688/china-policy-radar/master/ind
 | `issuer` | 发文机关 |
 | `date` | 印发日期（YYYY-MM-DD） |
 | `sources[]` | **至少一个一手来源 URL**（gov.cn / 新华社 / 部委官网）|
-| `clauses[]` | 条款级摘录，含条款编号 |
+| 条款摘录 | 见正文「重点条款原文摘录」小节，逐字取自原文并按条编号（`clauses[]` 机器字段尚未落库，勿按 schema 假定其存在） |
 | `tags[]` | 主题标签 |
 
 > 铁律：**没有一手来源 URL 的条目，一律不收。** 宁可少，不可假。
+>
+> status 语义：`structured` = 含条款级原文摘录；`pending` = 仅元数据 + 一手链接，条款未补录，禁止据其内容作条款性表述。
 
 ## 免责声明
 
