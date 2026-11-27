@@ -3,10 +3,14 @@
 从 data/**/*.md 的 YAML front matter 生成 index.json。
 给 AI agent / 站点 读取用的机器可读索引。
 
-用法: python3 scripts/build_index.py
+用法:
+    python3 scripts/build_index.py           # 重建 index.json
+    python3 scripts/build_index.py --check   # 只校验：index.json 与 data/ 是否漂移（CI 闸门）
 """
+import argparse
 import json
 import re
+import sys
 from datetime import date
 from pathlib import Path
 
@@ -67,7 +71,7 @@ def parse_front_matter(text: str):
     return data
 
 
-def main():
+def build_doc() -> dict:
     entries = []
     for p in sorted(DATA.rglob("*.md")):
         if p.parent.name == "raw":
@@ -94,7 +98,7 @@ def main():
     by_status = {}
     for e in entries:
         by_status[e["status"]] = by_status.get(e["status"], 0) + 1
-    doc = {
+    return {
         "repo": "china-policy-radar",
         "official": False,
         "generated": date.today().isoformat(),
@@ -109,10 +113,56 @@ def main():
         ),
         "entries": entries,
     }
+
+
+def check() -> int:
+    """漂移闸门：忽略 generated 时间戳，比对 entries / count / count_by_status。
+
+    PR 改了 data/ 却没跑 build_index.py 时，这里非零退出；推到 main 后
+    rebuild-index 工作流会自动重建，但 PR 阶段就应发现，避免主分支短暂漂移。
+    """
+    if not OUT.exists():
+        print(f"CHECK FAILED: {OUT.relative_to(ROOT)} 不存在，请先运行 build_index.py", file=sys.stderr)
+        return 1
+    try:
+        current = json.loads(OUT.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        print(f"CHECK FAILED: index.json 不是合法 JSON: {e}", file=sys.stderr)
+        return 1
+    fresh = build_doc()
+    drift = False
+    for k in ("count", "count_by_status"):
+        if current.get(k) != fresh[k]:
+            print(f"DRIFT {k}: index.json={current.get(k)} data/={fresh[k]}", file=sys.stderr)
+            drift = True
+    cur_e = {e["id"]: e for e in current.get("entries", [])}
+    new_e = {e["id"]: e for e in fresh["entries"]}
+    for i in sorted(set(cur_e) - set(new_e)):
+        print(f"DRIFT 多余条目（data/ 已不存在）: {i}", file=sys.stderr); drift = True
+    for i in sorted(set(new_e) - set(cur_e)):
+        print(f"DRIFT 缺失条目（data/ 新增未入索引）: {i}", file=sys.stderr); drift = True
+    for i in sorted(set(cur_e) & set(new_e)):
+        if cur_e[i] != new_e[i]:
+            print(f"DRIFT 字段变化: {i}", file=sys.stderr); drift = True
+    if drift:
+        print("CHECK FAILED: index.json 与 data/ 漂移，请运行 python3 scripts/build_index.py 后一并提交", file=sys.stderr)
+        return 1
+    print(f"CHECK OK: index.json 与 data/ 一致（{fresh['count']} entries）")
+    return 0
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("--check", action="store_true", help="只校验 index.json 是否与 data/ 漂移，不写文件")
+    args = ap.parse_args()
+    if args.check:
+        return check()
+    doc = build_doc()
     OUT.write_text(json.dumps(doc, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"index.json: {len(entries)} entries -> {OUT}")
-    print(f"  status 分布: {by_status}")
+    print(f"index.json: {len(doc['entries'])} entries -> {OUT}")
+    print(f"  status 分布: {doc['count_by_status']}")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

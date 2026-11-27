@@ -1,0 +1,42 @@
+name: 索引漂移闸门
+
+# data/ 或 catalog/ 变了但 index.json 没重建 → PR 阶段直接红。
+# 推到 main 后 rebuild-index 工作流会自动修复，但那段窗口期里
+# AI agent 读到的是过期索引；这里把窗口关掉。
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - "data/**"
+      - "catalog/**"
+      - "index.json"
+      - "scripts/build_index.py"
+      - "scripts/build_stubs.py"
+      - ".github/workflows/index-check.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "catalog/**"
+      - "index.json"
+      - "scripts/build_index.py"
+      - "scripts/build_stubs.py"
+      - ".github/workflows/index-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065  # v5
+        with:
+          python-version: "3.12"
+
+      - name: index.json 与 data/ 零漂移
+        run: python3 scripts/build_index.py --check
+
+      - name: 巡检脚本离线自检（时效闸门）
+        run: python3 scripts/watch_gov.py --self-test
